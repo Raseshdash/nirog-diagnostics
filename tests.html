@@ -9,10 +9,16 @@
 
     <title>Tests | NIROG Diagnostics</title>
 
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fragment.css">
+    <link rel="stylesheet" href="css/tests.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/animation.css">
 
@@ -37,58 +43,246 @@
         </div>
 
     </section>
-
-    <section class="services">
+    <section class="test-search">
 
         <div class="container">
 
-            <div class="service-grid">
+            <div class="search-box">
 
-                <div class="card">
+                <input
+                        type="text"
+                        placeholder="Search Test, Package or Health Checkup">
+
+                <button>
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+    <section class="test-categories">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Popular Categories
+            </h2>
+
+            <div class="category-grid">
+
+                <div class="category-card">
+                    <i class="fa-solid fa-vial"></i>
+                    <span>Blood Test</span>
+                </div>
+
+                <div class="category-card">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    <span>Heart</span>
+                </div>
+
+                <div class="category-card">
+                    <i class="fa-solid fa-droplet"></i>
+                    <span>Diabetes</span>
+                </div>
+
+                <div class="category-card">
+                    <i class="fa-solid fa-bone"></i>
+                    <span>Vitamin</span>
+                </div>
+
+                <div class="category-card">
+                    <i class="fa-solid fa-person"></i>
+                    <span>Men</span>
+                </div>
+
+                <div class="category-card">
+                    <i class="fa-solid fa-person-dress"></i>
+                    <span>Women</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <section class="tests-section">
+
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center mb-5 flex-wrap">
+
+                <div>
+                    <h2 class="section-title mb-2">Popular Blood Tests</h2>
+                    <p class="text-muted mb-0">
+                        Book from our most requested diagnostic tests.
+                    </p>
+                </div>
+
+                <a href="booking.html" class="primary-btn">
+                    View All Tests
+                </a>
+
+            </div>
+
+            <div class="test-grid">
+
+                <!-- CBC -->
+                <div class="test-card">
+
+                    <div class="test-icon">
+                        <i class="fa-solid fa-vial"></i>
+                    </div>
 
                     <h3>CBC Test</h3>
 
-                    <p>₹350</p>
+                    <div class="price">
+                        ₹350
+                        <span>₹500</span>
+                    </div>
+
+                    <ul>
+                        <li><i class="fa-solid fa-house-medical"></i> Home Collection</li>
+                        <li><i class="fa-solid fa-file-waveform"></i> Same Day Report</li>
+                        <li><i class="fa-solid fa-clock"></i> Fasting: No</li>
+                    </ul>
+
+                    <a href="booking.html" class="primary-btn">
+                        Book Now
+                    </a>
 
                 </div>
 
-                <div class="card">
+                <!-- Thyroid -->
+                <div class="test-card">
+
+                    <div class="test-icon">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
 
                     <h3>Thyroid Profile</h3>
 
-                    <p>₹450</p>
+                    <div class="price">
+                        ₹450
+                        <span>₹650</span>
+                    </div>
+
+                    <ul>
+                        <li><i class="fa-solid fa-house-medical"></i> Home Collection</li>
+                        <li><i class="fa-solid fa-file-waveform"></i> Same Day Report</li>
+                        <li><i class="fa-solid fa-clock"></i> Fasting: No</li>
+                    </ul>
+
+                    <a href="booking.html" class="primary-btn">
+                        Book Now
+                    </a>
 
                 </div>
 
-                <div class="card">
+                <!-- Vitamin D -->
+                <div class="test-card">
 
-                    <h3>Vitamin D</h3>
+                    <div class="test-icon">
+                        <i class="fa-solid fa-sun"></i>
+                    </div>
 
-                    <p>₹1200</p>
+                    <h3>Vitamin D Test</h3>
+
+                    <div class="price">
+                        ₹1200
+                        <span>₹1500</span>
+                    </div>
+
+                    <ul>
+                        <li><i class="fa-solid fa-house-medical"></i> Home Collection</li>
+                        <li><i class="fa-solid fa-file-waveform"></i> 24 Hr Report</li>
+                        <li><i class="fa-solid fa-clock"></i> Fasting: No</li>
+                    </ul>
+
+                    <a href="booking.html" class="primary-btn">
+                        Book Now
+                    </a>
 
                 </div>
 
-                <div class="card">
+                <!-- Vitamin B12 -->
+                <div class="test-card">
 
-                    <h3>Vitamin B12</h3>
+                    <div class="test-icon">
+                        <i class="fa-solid fa-capsules"></i>
+                    </div>
 
-                    <p>₹850</p>
+                    <h3>Vitamin B12 Test</h3>
+
+                    <div class="price">
+                        ₹850
+                        <span>₹1100</span>
+                    </div>
+
+                    <ul>
+                        <li><i class="fa-solid fa-house-medical"></i> Home Collection</li>
+                        <li><i class="fa-solid fa-file-waveform"></i> 24 Hr Report</li>
+                        <li><i class="fa-solid fa-clock"></i> Fasting: No</li>
+                    </ul>
+
+                    <a href="booking.html" class="primary-btn">
+                        Book Now
+                    </a>
 
                 </div>
 
-                <div class="card">
+                <!-- Liver -->
+                <div class="test-card">
+
+                    <div class="test-icon">
+                        <i class="fa-solid fa-lungs"></i>
+                    </div>
 
                     <h3>Liver Function Test</h3>
 
-                    <p>₹600</p>
+                    <div class="price">
+                        ₹600
+                        <span>₹850</span>
+                    </div>
+
+                    <ul>
+                        <li><i class="fa-solid fa-house-medical"></i> Home Collection</li>
+                        <li><i class="fa-solid fa-file-waveform"></i> Same Day Report</li>
+                        <li><i class="fa-solid fa-clock"></i> Fasting: Yes</li>
+                    </ul>
+
+                    <a href="booking.html" class="primary-btn">
+                        Book Now
+                    </a>
 
                 </div>
 
-                <div class="card">
+                <!-- Kidney -->
+                <div class="test-card">
+
+                    <div class="test-icon">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
 
                     <h3>Kidney Function Test</h3>
 
-                    <p>₹550</p>
+                    <div class="price">
+                        ₹550
+                        <span>₹700</span>
+                    </div>
+
+                    <ul>
+                        <li><i class="fa-solid fa-house-medical"></i> Home Collection</li>
+                        <li><i class="fa-solid fa-file-waveform"></i> Same Day Report</li>
+                        <li><i class="fa-solid fa-clock"></i> Fasting: Yes</li>
+                    </ul>
+
+                    <a href="booking.html" class="primary-btn">
+                        Book Now
+                    </a>
 
                 </div>
 
@@ -98,14 +292,103 @@
 
     </section>
 
+    <!-- Why Choose NIROG -->
+
+    <section class="health-insights">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>Why Choose NIROG Diagnostics?</h2>
+
+                <p>
+                    Trusted diagnostic services with accurate reports and home sample collection.
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="process-card">
+
+                        <div class="process-icon">
+                            <i class="fa-solid fa-house-medical"></i>
+                        </div>
+
+                        <h4>Free Home Collection</h4>
+
+                        <p>Experienced phlebotomists collect your sample at your doorstep.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="process-card">
+
+                        <div class="process-icon">
+                            <i class="fa-solid fa-microscope"></i>
+                        </div>
+
+                        <h4>Accurate Reports</h4>
+
+                        <p>Reliable testing using advanced laboratory equipment.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="process-card">
+
+                        <div class="process-icon">
+                            <i class="fa-solid fa-file-waveform"></i>
+                        </div>
+
+                        <h4>Digital Reports</h4>
+
+                        <p>Receive reports online via WhatsApp and Email.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="process-card">
+
+                        <div class="process-icon">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+
+                        <h4>Expert Support</h4>
+
+                        <p>Friendly assistance before and after your diagnostic tests.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
 </main>
 
 <div id="footer"></div>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
 <script src="js/include.js"></script>
 <script src="js/app.js"></script>
+
 </body>
 
 </html>

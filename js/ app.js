@@ -1,0 +1,1 @@
+console.log("NIROG Diagnostics Website Loaded");

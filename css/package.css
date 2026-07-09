@@ -7,6 +7,8 @@
     background:linear-gradient(135deg,#0d6efd,#0047b3);
     color:#fff;
     text-align:center;
+     position:relative;
+        overflow:hidden;
 }
 
 .page-banner h1{
@@ -19,7 +21,42 @@
     font-size:18px;
     opacity:.9;
 }
+.page-banner::before,
+.page-banner::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+    animation:floatCircle 12s linear infinite;
+}
+.page-banner::before{
+    width:260px;
+    height:260px;
+    left:-80px;
+    top:-80px;
+}
+.page-banner::after{
+    width:180px;
+    height:180px;
+    right:5%;
+    bottom:-50px;
+    animation-duration:16s;
+}
+@keyframes floatCircle{
 
+0%{
+transform:translateY(0) rotate(0);
+}
+
+50%{
+transform:translateY(-35px) rotate(180deg);
+}
+
+100%{
+transform:translateY(0) rotate(360deg);
+}
+
+}
 /* ==========================================
    SEARCH
 ========================================== */
@@ -59,6 +96,24 @@
     border-radius:50%;
     background:#0d6efd;
     color:#fff;
+    transition:.35s;
+}
+.search-box button:hover{
+
+transform:scale(1.12);
+
+}
+
+.search-box button i{
+
+transition:.35s;
+
+}
+
+.search-box button:hover i{
+
+transform:rotate(-15deg);
+
 }
 
 /* ==========================================
@@ -83,6 +138,49 @@
     box-shadow:0 10px 30px rgba(0,0,0,.08);
     transition:.35s;
     cursor:pointer;
+    position:relative;
+
+    overflow:hidden;
+}
+.category-card::after{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+top:50%;
+
+width:0;
+
+height:0;
+
+background:rgba(13,110,253,.05);
+
+border-radius:50%;
+
+transform:translate(-50%,-50%);
+
+transition:.45s;
+
+}
+.category-card:hover::after{
+
+width:320px;
+
+height:320px;
+
+}
+
+.category-card span,
+
+.category-card i{
+
+position:relative;
+
+z-index:2;
+
 }
 
 .category-card:hover{
@@ -133,9 +231,42 @@
     border:1px solid #eef3ff;
 }
 
+.package-card{
+overflow:hidden;
+position:relative;
+}
+
+.package-card::before{
+
+content:"";
+position:absolute;
+left:-120%;
+top:0;
+width:70%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.55),
+transparent
+);
+
+transition:1s;
+
+}
+
+.package-card:hover::before{
+
+left:150%;
+
+}
+
 .package-card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 20px 45px rgba(13,110,253,.15);
+
+transform:translateY(-12px) scale(1.02);
+
+box-shadow:0 30px 60px rgba(13,110,253,.18);
+
 }
 
 .package-badge{
@@ -162,6 +293,7 @@
     font-size:34px;
     margin-bottom:25px;
     transition:.35s;
+    position:relative;
 }
 
 .package-card:hover .package-icon{
@@ -169,7 +301,37 @@
     color:#fff;
     transform:rotate(8deg) scale(1.08);
 }
+.package-icon::after{
 
+content:"";
+position:absolute;
+
+width:100%;
+height:100%;
+
+border-radius:50%;
+
+border:2px solid #0d6efd;
+
+animation:iconPulse 2.5s infinite;
+
+}
+
+@keyframes iconPulse{
+
+0%{
+
+transform:scale(1);
+
+opacity:.8;
+
+}
+
+100%{
+
+transform:scale(1.5);
+
+opacity:0;}}
 .package-card h3{
     color:#0d47a1;
     font-size:26px;
@@ -190,20 +352,46 @@
     list-style:none;
     margin-bottom:12px;
     color:#555;
+    transition:.3s;
 }
 
 .package-card li i{
     color:#16a34a;
     margin-right:10px;
 }
+.package-card li:hover{
 
+padding-left:10px;
+}
+.package-card li i{
+
+transition:.35s;
+
+}
+
+.package-card li:hover i{
+
+transform:rotate(360deg);
+
+color:#16a34a;
+
+}
 .package-price{
     font-size:34px;
     font-weight:700;
     color:#16a34a;
     margin-bottom:25px;
+    transition:.35s;
 }
+.package-card:hover .package-price{
 
+color:#0d6efd;
+
+text-shadow:
+
+0 0 10px rgba(13,110,253,.35);
+
+}
 .package-price span{
     font-size:18px;
     color:#999;
@@ -256,6 +444,9 @@
     box-shadow:0 10px 30px rgba(0,0,0,.08);
     transition:.35s;
     height:100%;
+    overflow:hidden;
+
+    position:relative;
 }
 
 .benefit-card:hover{
@@ -267,7 +458,44 @@
     color:#0d6efd;
     margin-bottom:18px;
 }
+.benefit-card::before{
 
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+height:5px;
+
+width:0;
+
+background:#0d6efd;
+
+transition:.4s;
+
+}
+
+.benefit-card:hover::before{
+
+width:100%;
+
+}
+
+.benefit-card:hover i{
+
+transform:scale(1.2) rotate(10deg);
+
+color:#16a34a;
+
+}
+.benefit-card i{
+
+transition:.35s;
+
+}
 .benefit-card h5{
     margin:0;
     font-weight:600;
@@ -307,6 +535,14 @@
     margin:0 auto 20px;
     font-size:28px;
     font-weight:bold;
+    transition:.4s;
+}
+.process-card:hover .process-icon{
+
+transform:rotate(360deg);
+
+background:#16a34a;
+
 }
 
 /* ==========================================
@@ -345,6 +581,45 @@
     padding:90px 0;
     color:#fff;
     text-align:center;
+    position:relative;
+
+    overflow:hidden;
+}
+.cta::before{
+
+content:"";
+
+position:absolute;
+
+width:500px;
+
+height:500px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.05);
+
+top:-220px;
+
+right:-180px;
+
+animation:rotateBlob 25s linear infinite;
+
+}
+@keyframes rotateBlob{
+
+0%{
+
+transform:rotate(0);
+
+}
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
 }
 
 .cta h2{
@@ -411,5 +686,39 @@
     .package-price{
         font-size:28px;
     }
+
+}
+
+.page-banner,
+.package-search,
+.package-categories,
+.packages-section,
+.compare-packages,
+.why-packages,
+.process,
+.faq-section,
+.cta{
+
+animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
 
 }

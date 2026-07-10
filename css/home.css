@@ -876,7 +876,6 @@ background:#0d6efd;
 color:#fff;
 
 }
-
 .partner-grid{
 
 display:none;
@@ -884,6 +883,16 @@ display:none;
 grid-template-columns:repeat(4,1fr);
 
 gap:30px;
+
+}
+
+@media (max-width:992px){
+
+.partner-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
 
 }
 
@@ -983,4 +992,119 @@ color:#666;
 
 .partner-btn:hover{
     background:#0b5ed7;
+}
+/* ===========================
+   MOBILE RESPONSIVE
+=========================== */
+
+@media (max-width:768px){
+
+/* Section */
+
+.partner-section{
+
+    padding:40px 0;
+
+}
+
+.partner-section .display-5{
+
+    font-size:32px;
+
+}
+
+.partner-section .lead{
+
+    font-size:16px;
+
+}
+
+/* Tabs */
+
+.partner-tabs{
+
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+    margin:30px 0;
+
+}
+
+.partner-tab{
+
+    width:100%;
+    max-width:320px;
+    padding:14px 20px;
+    font-size:16px;
+
+}
+
+/* Cards */
+
+.partner-grid{
+
+    grid-template-columns:1fr !important;
+    gap:20px;
+
+}
+
+.partner-card{
+
+    padding:25px 20px;
+
+}
+
+.partner-logo{
+
+    height:90px;
+    margin-bottom:15px;
+
+}
+
+.partner-logo img{
+
+    max-width:120px;
+    max-height:70px;
+
+}
+
+.partner-card h4{
+
+    font-size:22px;
+    margin-bottom:15px;
+
+}
+
+.partner-info{
+
+    gap:10px;
+    font-size:15px;
+
+}
+
+.partner-btn{
+
+    width:100%;
+    padding:14px;
+    font-size:16px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.section-title h1{
+
+    font-size:32px;
+    line-height:1.3;
+
+}
+
+.section-title p{
+
+    font-size:16px;
+
+}
+
 }

@@ -13,6 +13,8 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fragment.css">
+    <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/animation.css">
 
@@ -23,8 +25,9 @@
 <div id="topbar"></div>
 
 <div id="header"></div>
-
 <main>
+
+    <!-- Banner -->
 
     <section class="page-banner">
 
@@ -32,62 +35,325 @@
 
             <h1>Contact Us</h1>
 
+            <p>We're Here to Help You 7 Days a Week</p>
+
         </div>
 
     </section>
 
-    <section class="container hero-grid">
 
-        <div>
+    <!-- Contact Section -->
 
-            <h2>Reach Us</h2>
+    <section class="contact-section">
 
-            <p>
+        <div class="container">
 
-                📍 L-384, Baramunda Housing Board Colony, Bhubaneswar
+            <div class="row g-5 align-items-center">
 
-            </p>
+                <!-- Left -->
 
-            <p>
+                <div class="col-lg-5">
 
-                📞 +91 89080 79448
+                    <span class="section-tag">
+                        Get In Touch
+                    </span>
 
-            </p>
+                    <h2>We're Always Ready to Help</h2>
 
-            <p>
+                    <p>
 
-                ✉ info@nirogdiagnostics.com
+                        Contact us for blood tests, health packages,
+                        home sample collection or any diagnostic enquiry.
 
-            </p>
+                    </p>
+
+                    <div class="contact-card">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        <div>
+
+                            <h5>Address</h5>
+
+                            <p>
+                                L-384, Baramunda Housing Board Colony,
+                                Bhubaneswar
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="contact-card">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        <div>
+
+                            <h5>Phone</h5>
+
+                            <p>+91 89080 79448</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="contact-card">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <div>
+
+                            <h5>Email</h5>
+
+                            <p>info@nirogdiagnostics.com</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="contact-card">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                        <div>
+
+                            <h5>Working Hours</h5>
+
+                            <p>Daily • 7:00 AM – 8:00 PM</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Right -->
+
+                <div class="col-lg-7">
+
+                    <div class="contact-form">
+
+                        <h3>Send Us a Message</h3>
+
+                        <form>
+
+                            <div class="row">
+
+                                <div class="col-md-6 mb-3">
+
+                                    <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Full Name">
+
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+
+                                    <input
+                                            type="email"
+                                            class="form-control"
+                                            placeholder="Email Address">
+
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-6 mb-3">
+
+                                    <input
+                                            type="tel"
+                                            class="form-control"
+                                            placeholder="Mobile Number">
+
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+
+                                    <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Subject">
+
+                                </div>
+
+                            </div>
+
+                            <textarea
+                                    class="form-control mb-4"
+                                    rows="5"
+                                    placeholder="Write Your Message"></textarea>
+
+                            <button class="primary-btn">
+
+                                <i class="fa-solid fa-paper-plane"></i>
+
+                                Send Message
+
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
-        <div>
+    </section>
 
-            <form class="booking-form">
 
-                <input type="text" placeholder="Name">
+    <!-- Google Map -->
 
-                <input type="email" placeholder="Email">
+    <section class="map-section">
 
-                <input type="text" placeholder="Subject">
+        <div class="container">
 
-                <textarea placeholder="Message"></textarea>
+            <h2 class="section-title text-center">
 
-                <button class="primary-btn">
+                Find Us On Map
 
-                    Send Message
+            </h2>
 
-                </button>
+            <div class="map-box">
 
-            </form>
+                <iframe
+                        src="https://www.google.com/maps?q=Bhubaneswar&output=embed"
+                        loading="lazy">
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section class="faq-section">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <h2 class="section-title">
+
+                    Frequently Asked Questions
+
+                </h2>
+
+            </div>
+
+            <div class="accordion" id="faq">
+
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header">
+
+                        <button class="accordion-button"
+
+                                data-bs-toggle="collapse"
+
+                                data-bs-target="#faq1">
+
+                            Do you provide Home Collection?
+
+                        </button>
+
+                    </h2>
+
+                    <div id="faq1"
+
+                         class="accordion-collapse collapse show"
+
+                         data-bs-parent="#faq">
+
+                        <div class="accordion-body">
+
+                            Yes. We provide free home sample collection.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header">
+
+                        <button class="accordion-button collapsed"
+
+                                data-bs-toggle="collapse"
+
+                                data-bs-target="#faq2">
+
+                            How long do reports take?
+
+                        </button>
+
+                    </h2>
+
+                    <div id="faq2"
+
+                         class="accordion-collapse collapse"
+
+                         data-bs-parent="#faq">
+
+                        <div class="accordion-body">
+
+                            Most reports are delivered within 24 hours.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <div class="container text-center">
+
+            <h2>
+
+                Ready to Book Your Test?
+
+            </h2>
+
+            <p>
+
+                Schedule your home sample collection today.
+
+            </p>
+
+            <a href="booking.html"
+
+               class="primary-btn">
+
+                Book Appointment
+
+            </a>
 
         </div>
 
     </section>
 
 </main>
-
 <div id="footer"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>

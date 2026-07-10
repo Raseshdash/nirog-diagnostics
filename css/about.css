@@ -1,0 +1,154 @@
+/*about.css*/
+.page-banner{
+padding:90px 0;
+background:linear-gradient(135deg,#0d6efd,#0047b3);
+color:#fff;
+text-align:center;
+}
+
+.page-banner h1{
+font-size:52px;
+font-weight:700;
+}
+
+.page-banner p{
+margin-top:15px;
+font-size:18px;
+opacity:.9;
+}
+
+.about-section{
+padding:100px 0;
+}
+
+.about-img{
+animation:float 4s ease-in-out infinite;
+}
+
+.section-tag{
+display:inline-block;
+padding:8px 20px;
+border-radius:30px;
+background:#e9f2ff;
+color:#0d6efd;
+font-weight:600;
+margin-bottom:20px;
+}
+
+.about-section h2{
+font-size:42px;
+font-weight:700;
+margin-bottom:20px;
+color:#0d47a1;
+}
+
+.about-section p{
+color:#666;
+line-height:30px;
+margin-bottom:18px;
+}
+
+.about-list{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+margin-top:25px;
+}
+
+.about-list div{
+font-weight:600;
+}
+
+.about-list i{
+color:#16a34a;
+margin-right:10px;
+}
+
+.why-us{
+padding:100px 0;
+background:#f8fbff;
+}
+
+.why-card{
+background:#fff;
+padding:35px;
+text-align:center;
+border-radius:22px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.35s;
+height:100%;
+}
+
+.why-card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(13,110,253,.15);
+}
+
+.why-card i{
+font-size:45px;
+color:#0d6efd;
+margin-bottom:18px;
+transition:.35s;
+}
+
+.why-card:hover i{
+transform:rotate(10deg) scale(1.15);
+}
+
+.mission-section{
+padding:100px 0;
+}
+
+.mission-card{
+background:#fff;
+padding:40px;
+border-radius:25px;
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+text-align:center;
+transition:.35s;
+}
+
+.mission-card:hover{
+transform:translateY(-10px);
+}
+
+.mission-card i{
+font-size:46px;
+color:#0d6efd;
+margin-bottom:18px;
+}
+
+.about-stats{
+padding:90px 0;
+background:#0d6efd;
+color:#fff;
+}
+
+.about-stats h2{
+font-size:48px;
+font-weight:700;
+}
+
+.about-stats p{
+font-size:18px;
+margin-top:10px;
+}
+
+@media(max-width:768px){
+
+.page-banner h1{
+font-size:38px;
+}
+
+.about-list{
+grid-template-columns:1fr;
+}
+
+.about-section,
+.why-us,
+.mission-section,
+.about-stats{
+padding:70px 0;
+}
+
+}

@@ -161,7 +161,7 @@ document.querySelectorAll(".category-btn").forEach(btn=>{
 loadCategory("blood");
 
 
-document.getElementById("sendWhatsapp").addEventListener("click", function () {
+document.getElementById("bookNowBtn").addEventListener("click", function () {
 
     const selectedTests = [];
 
@@ -171,12 +171,12 @@ document.getElementById("sendWhatsapp").addEventListener("click", function () {
 
         selectedTests.push({
             name: row.cells[0].innerText,
-            price: row.cells[1].innerText
+            price: Number(check.value)
         });
 
     });
 
-    if(selectedTests.length===0){
+    if(selectedTests.length === 0){
 
         alert("Please select at least one test.");
 
@@ -184,44 +184,34 @@ document.getElementById("sendWhatsapp").addEventListener("click", function () {
 
     }
 
-    const name = document.getElementById("customerName").value.trim();
-    const address = document.getElementById("customerAddress").value.trim();
-    const date = document.getElementById("bookingDate").value;
-    const time = document.getElementById("bookingTime").value;
+    let message = `🩺 *NIROG Diagnostics Test Booking*
 
-    let message = "🩺 *NIROG Diagnostics Booking*%0A%0A";
+🏥 *Lab:* ${data.name}
 
-    message += "🏥 *Lab:* " + data.name + "%0A%0A";
+📋 *Selected Tests:*
 
-    if(name)
-        message += "👤 *Name:* " + name + "%0A";
-
-    if(address)
-        message += "📍 *Address:* " + address + "%0A";
-
-    if(date)
-        message += "📅 *Preferred Date:* " + date + "%0A";
-
-    if(time)
-        message += "🕒 *Preferred Time:* " + time + "%0A";
-
-    if(name || address || date || time)
-        message += "%0A";
-
-    message += "📋 *Selected Tests*%0A";
+`;
 
     selectedTests.forEach((test,index)=>{
 
-        message += (index+1)+". "+test.name+" - "+test.price+"%0A";
+        message += `${index+1}. ${test.name} - ₹${test.price}\n`;
 
     });
 
-    message += "%0A💰 *Total:* ₹"+total;
+    message += `
 
-    message += "%0A%0A🚑 Home Sample Collection Required.";
+💰 *Total Amount:* ₹${total}
+
+🚑 Home Sample Collection Required.
+
+Kindly confirm the booking and share your address for sample collection.
+
+Thank you.`;
+
+    const whatsappNumber = "919114124211";
 
     window.open(
-        "https://wa.me/919114124211?text="+message,
+        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
         "_blank"
     );
 

@@ -876,15 +876,7 @@ background:#0d6efd;
 color:#fff;
 
 }
-.partner-grid{
 
-display:none;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:30px;
-
-}
 
 @media (max-width:992px){
 
@@ -896,10 +888,14 @@ grid-template-columns:repeat(2,1fr);
 
 }
 
-.active-grid{
+.partner-grid{
+    display:none !important;
+}
 
-display:grid;
-
+.partner-grid.active-grid{
+    display:grid !important;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
 }
 
 .partner-card{

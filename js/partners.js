@@ -141,12 +141,15 @@ document.querySelectorAll(".partner-tab").forEach(tab=>{
 
         this.classList.add("active");
 
-        document.querySelectorAll(".partner-grid")
-            .forEach(grid=>grid.classList.remove("active-grid"));
+        document.querySelectorAll(".partner-grid").forEach(grid => {
+            grid.classList.remove("active-grid");
+            grid.style.display = "none";
+        });
 
-        document
-            .getElementById(this.dataset.target)
-            .classList.add("active-grid");
+        const target = document.getElementById(this.dataset.target);
+
+        target.classList.add("active-grid");
+        target.style.display = "grid";
 
     });
 

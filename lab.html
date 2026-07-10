@@ -159,7 +159,10 @@
 
                         </h2>
 
-                        <button class="book-btn" id="bookNowBtn">
+                        <button
+                                class="book-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#bookingModal">
 
                             Book Now
 
@@ -186,7 +189,96 @@
     </a>
 
 </main>
+<!-- Booking Modal -->
+<div class="modal fade" id="bookingModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
 
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    Book Test (Optional Details)
+                </h5>
+
+                <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="mb-3">
+                    <label>Name (Optional)</label>
+                    <input
+                            type="text"
+                            id="customerName"
+                            class="form-control"
+                            placeholder="Enter your name">
+                </div>
+
+                <div class="mb-3">
+                    <label>Address (Optional)</label>
+                    <textarea
+                            id="customerAddress"
+                            class="form-control"
+                            rows="2"
+                            placeholder="Sample Collection Address"></textarea>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-6">
+                        <label>Date</label>
+                        <input
+                                type="date"
+                                id="bookingDate"
+                                class="form-control">
+                    </div>
+
+                    <div class="col-6">
+                        <label>Preferred Time</label>
+
+                        <select
+                                id="bookingTime"
+                                class="form-select">
+
+                            <option value="">Select</option>
+                            <option>Morning</option>
+                            <option>Afternoon</option>
+                            <option>Evening</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+
+                    Skip
+
+                </button>
+
+                <button
+                        id="sendWhatsapp"
+                        class="btn btn-success">
+
+                    Send to WhatsApp
+
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
 <div id="footer"></div>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>

@@ -287,3 +287,19 @@ margin-top:30px;
 }
 
 }
+.compare-table th,
+.compare-table td{
+    text-align:center;
+    vertical-align:middle;
+}
+
+.compare-table td .testCheck,
+.compare-table td .compareCheck{
+    margin-top:6px;
+}
+
+#toggleCompare{
+    font-weight:600;
+    border-radius:30px;
+    padding:12px 26px;
+}

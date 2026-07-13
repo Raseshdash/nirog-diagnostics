@@ -1,0 +1,111 @@
+{
+  "labs": {
+    "hod": {
+      "name": "HOD Diagnostics",
+      "logo": "images/labs/hod.png",
+      "discount": "15% OFF",
+      "rating": 4.8,
+      "categories": {
+        "blood": [
+          { "id": "cbc", "name": "CBC", "price": 299 },
+          { "id": "lft", "name": "LFT", "price": 699 },
+          { "id": "rft", "name": "RFT", "price": 599 }
+        ],
+        "urine": [
+          { "id": "routine_urine", "name": "Routine Urine", "price": 250 },
+          { "id": "urine_culture", "name": "Urine Culture", "price": 550 },
+          { "id": "protein_test", "name": "Protein Test", "price": 300 }
+        ],
+        "thyroid": [
+          { "id": "t3", "name": "T3", "price": 350 },
+          { "id": "t4", "name": "T4", "price": 350 },
+          { "id": "tsh", "name": "TSH", "price": 450 },
+          { "id": "thyroid_profile", "name": "Thyroid Profile", "price": 899 }
+        ],
+        "packages": [
+          { "id": "basic_health", "name": "Basic Health Package", "price": 1499 },
+          { "id": "executive", "name": "Executive Package", "price": 2999 },
+          { "id": "full_body", "name": "Full Body Checkup", "price": 4999 }
+        ]
+      }
+    },
+    "genx": {
+      "name": "GenX Diagnostics",
+      "logo": "images/labs/genx.png",
+      "discount": "10% OFF",
+      "rating": 4.6,
+      "categories": {
+        "blood": [
+          { "id": "cbc", "name": "CBC", "price": 320 },
+          { "id": "lft", "name": "LFT", "price": 720 }
+        ],
+        "urine": [
+          { "id": "routine_urine", "name": "Routine Urine", "price": 280 },
+          { "id": "urine_culture", "name": "Urine Culture", "price": 600 }
+        ],
+        "thyroid": [
+          { "id": "tsh", "name": "TSH", "price": 500 },
+          { "id": "thyroid_profile", "name": "Thyroid Profile", "price": 950 }
+        ],
+        "packages": [
+          { "id": "full_body", "name": "Full Body Checkup", "price": 4500 }
+        ]
+      }
+    }
+  },
+
+  "radiology": {
+    "hod": {
+      "name": "HOD Diagnostics",
+      "logo": "images/labs/hod.png",
+      "discount": "20% OFF",
+      "rating": 4.8,
+      "categories": {
+        "xray": [
+          { "id": "chest_xray", "name": "Chest X-Ray", "price": 500 },
+          { "id": "spine_xray", "name": "Spine X-Ray", "price": 650 },
+          { "id": "knee_xray", "name": "Knee X-Ray", "price": 600 }
+        ],
+        "ultrasound": [
+          { "id": "whole_abdomen", "name": "Whole Abdomen", "price": 1200 },
+          { "id": "pregnancy_scan", "name": "Pregnancy Scan", "price": 1500 },
+          { "id": "pelvis_scan", "name": "Pelvis Scan", "price": 1000 }
+        ],
+        "ctscan": [
+          { "id": "ct_brain", "name": "CT Brain", "price": 3200 },
+          { "id": "ct_chest", "name": "CT Chest", "price": 3800 },
+          { "id": "ct_abdomen", "name": "CT Abdomen", "price": 4200 }
+        ],
+        "mri": [
+          { "id": "mri_brain", "name": "MRI Brain", "price": 6500 },
+          { "id": "mri_spine", "name": "MRI Spine", "price": 7000 },
+          { "id": "mri_knee", "name": "MRI Knee", "price": 6000 }
+        ]
+      }
+    },
+    "genx": {
+      "name": "GenX Diagnostics",
+      "logo": "images/labs/genx.png",
+      "discount": "15% OFF",
+      "rating": 4.6,
+      "categories": {
+        "xray": [
+          { "id": "chest_xray", "name": "Chest X-Ray", "price": 550 },
+          { "id": "hand_xray", "name": "Hand X-Ray", "price": 450 }
+        ],
+        "ultrasound": [
+          { "id": "whole_abdomen", "name": "Whole Abdomen", "price": 1300 },
+          { "id": "pelvis_scan", "name": "Pelvis Scan", "price": 1100 }
+        ],
+        "ctscan": [
+          { "id": "ct_brain", "name": "CT Brain", "price": 3400 },
+          { "id": "ct_chest", "name": "CT Chest", "price": 3900 }
+        ],
+        "mri": [
+          { "id": "mri_brain", "name": "MRI Brain", "price": 6800 },
+          { "id": "mri_spine", "name": "MRI Spine", "price": 7200 }
+        ]
+      }
+    }
+  }
+}

@@ -1,218 +1,193 @@
-const labDetails = {
+let allData = null;
+let currentLab = null;
+let currentCategory = "blood";
+let cart = {};   // key: "labKey|testId" -> {labName, testName, price}
 
-    hod:{
+async function init() {
+    allData = await loadLabData();
 
-        name:"HOD Diagnostics",
-        logo:"images/labs/hod.png",
-        discount:"15% OFF",
+    const params = new URLSearchParams(window.location.search);
+    currentLab = params.get("lab") || "hod";
 
-        categories:{
-
-            blood:[
-                {name:"CBC",price:299},
-                {name:"LFT",price:699},
-                {name:"RFT",price:599}
-            ],
-
-            urine:[
-                {name:"Routine Urine",price:250},
-                {name:"Urine Culture",price:550},
-                {name:"Protein Test",price:300}
-            ],
-
-            thyroid:[
-                {name:"T3",price:350},
-                {name:"T4",price:350},
-                {name:"TSH",price:450},
-                {name:"Thyroid Profile",price:899}
-            ],
-
-            packages:[
-                {name:"Basic Health Package",price:1499},
-                {name:"Executive Package",price:2999},
-                {name:"Full Body Checkup",price:4999}
-            ]
-
-        }
-
-    },
-
-    genx:{
-
-        name:"GenX Diagnostics",
-        logo:"images/labs/genx.png",
-        discount:"10% OFF",
-
-        categories:{
-
-            blood:[
-                {name:"CBC",price:320},
-                {name:"LFT",price:720}
-            ],
-
-            urine:[
-                {name:"Routine Urine",price:280},
-                {name:"Urine Culture",price:600}
-            ],
-
-            thyroid:[
-                {name:"TSH",price:500},
-                {name:"Thyroid Profile",price:950}
-            ],
-
-            packages:[
-                {name:"Full Body Checkup",price:4500}
-            ]
-
-        }
-
+    const lab = allData.labs[currentLab];
+    if (!lab) {
+        console.error("Lab not found:", currentLab);
+        return;
     }
 
-};
+    document.getElementById("labLogo").src = lab.logo;
+    document.getElementById("labName").innerHTML = lab.name;
+    document.getElementById("discount").innerHTML = lab.discount;
 
-const params = new URLSearchParams(window.location.search);
+    bindCategoryTabs();
+    bindCompareToggle();
+    loadCategory(currentCategory);
+}
 
-const lab = params.get("lab") || "hod";
-
-const data = labDetails[lab];
-
-document.getElementById("labLogo").src = data.logo;
-document.getElementById("labName").innerHTML = data.name;
-document.getElementById("discount").innerHTML = data.discount;
-
-let total = 0;
-
-function loadCategory(category){
-
+function loadCategory(category) {
+    currentCategory = category;
+    const lab = allData.labs[currentLab];
     const list = document.getElementById("testList");
-
     list.innerHTML = "";
 
-    total = 0;
-    document.getElementById("totalPrice").innerHTML = "₹0";
-
-    data.categories[category].forEach(test=>{
+    (lab.categories[category] || []).forEach(test => {
+        const cartKey = `${currentLab}|${test.id}`;
+        const checked = cart[cartKey] ? "checked" : "";
 
         list.innerHTML += `
-
         <tr>
-
             <td>${test.name}</td>
-
             <td>₹${test.price}</td>
-
             <td>
-                <input
-                    type="checkbox"
-                    class="testCheck"
-                    value="${test.price}">
+                <input type="checkbox"
+                       class="testCheck"
+                       data-key="${cartKey}"
+                       data-name="${test.name}"
+                       data-price="${test.price}"
+                       ${checked}>
             </td>
-
-        </tr>
-
-        `;
-
+        </tr>`;
     });
 
     bindCheckbox();
-
+    renderCompareTable(category);
 }
 
-function bindCheckbox(){
-
-    document.querySelectorAll(".testCheck").forEach(check=>{
-
-        check.addEventListener("change",function(){
-
-            total = 0;
-
-            document.querySelectorAll(".testCheck:checked").forEach(item=>{
-
-                total += Number(item.value);
-
-            });
-
-            document.getElementById("totalPrice").innerHTML = "₹" + total;
-
+function bindCheckbox() {
+    document.querySelectorAll(".testCheck").forEach(check => {
+        check.addEventListener("change", function () {
+            const key = this.dataset.key;
+            if (this.checked) {
+                cart[key] = {
+                    labName: allData.labs[currentLab].name,
+                    testName: this.dataset.name,
+                    price: Number(this.dataset.price)
+                };
+            } else {
+                delete cart[key];
+            }
+            updateTotal();
         });
-
     });
-
 }
 
-document.querySelectorAll(".category-btn").forEach(btn=>{
+function updateTotal() {
+    const total = Object.values(cart).reduce((sum, item) => sum + item.price, 0);
+    document.getElementById("totalPrice").innerHTML = "₹" + total;
+}
 
-    btn.addEventListener("click",function(){
-
-        document.querySelectorAll(".category-btn").forEach(b=>{
-
-            b.classList.remove("active");
-
+function bindCategoryTabs() {
+    document.querySelectorAll(".category-btn").forEach(btn => {
+        btn.addEventListener("click", function () {
+            document.querySelectorAll(".category-btn").forEach(b => b.classList.remove("active"));
+            this.classList.add("active");
+            loadCategory(this.dataset.category);
         });
+    });
+}
 
-        this.classList.add("active");
+/* ---------- COMPARISON TABLE ----------
+   Shows the same category's tests across ALL labs side by side,
+   so the user can pick the cheapest lab per test. */
+function renderCompareTable(category) {
+    const box = document.getElementById("compareBox");
+    if (!box) return;
 
-        loadCategory(this.dataset.category);
+    const labKeys = Object.keys(allData.labs);
+    let rows = {};
 
+    labKeys.forEach(labKey => {
+        const tests = allData.labs[labKey].categories[category] || [];
+        tests.forEach(t => {
+            if (!rows[t.id]) rows[t.id] = { name: t.name, prices: {} };
+            rows[t.id].prices[labKey] = t.price;
+        });
     });
 
-});
+    let html = `<table class="table table-bordered compare-table">
+        <thead><tr><th>Test</th>`;
+    labKeys.forEach(labKey => {
+        html += `<th>${allData.labs[labKey].name}</th>`;
+    });
+    html += `</tr></thead><tbody>`;
 
-loadCategory("blood");
+    Object.entries(rows).forEach(([testId, row]) => {
+        html += `<tr><td>${row.name}</td>`;
+        labKeys.forEach(labKey => {
+            const price = row.prices[labKey];
+            if (price === undefined) {
+                html += `<td class="text-muted">—</td>`;
+            } else {
+                const cartKey = `${labKey}|${testId}`;
+                const checked = cart[cartKey] ? "checked" : "";
+                html += `<td>
+                    ₹${price}
+                    <br>
+                    <input type="checkbox"
+                           class="compareCheck"
+                           data-key="${cartKey}"
+                           data-lab="${labKey}"
+                           data-name="${row.name}"
+                           data-price="${price}"
+                           ${checked}>
+                </td>`;
+            }
+        });
+        html += `</tr>`;
+    });
 
+    html += `</tbody></table>`;
+    box.innerHTML = html;
+
+    document.querySelectorAll(".compareCheck").forEach(check => {
+        check.addEventListener("change", function () {
+            const key = this.dataset.key;
+            if (this.checked) {
+                cart[key] = {
+                    labName: allData.labs[this.dataset.lab].name,
+                    testName: this.dataset.name,
+                    price: Number(this.dataset.price)
+                };
+            } else {
+                delete cart[key];
+            }
+            updateTotal();
+        });
+    });
+}
+
+function bindCompareToggle() {
+    const toggleBtn = document.getElementById("toggleCompare");
+    const compareBox = document.getElementById("compareBox");
+    if (!toggleBtn || !compareBox) return;
+
+    toggleBtn.addEventListener("click", () => {
+        const isHidden = compareBox.style.display === "none" || !compareBox.style.display;
+        compareBox.style.display = isHidden ? "block" : "none";
+        toggleBtn.textContent = isHidden ? "Hide Price Comparison" : "Compare Prices Across Labs";
+    });
+}
 
 document.getElementById("bookNowBtn").addEventListener("click", function () {
+    const items = Object.values(cart);
 
-    const selectedTests = [];
-
-    document.querySelectorAll(".testCheck:checked").forEach(check => {
-
-        const row = check.closest("tr");
-
-        selectedTests.push({
-            name: row.cells[0].innerText,
-            price: Number(check.value)
-        });
-
-    });
-
-    if(selectedTests.length === 0){
-
+    if (items.length === 0) {
         alert("Please select at least one test.");
-
         return;
-
     }
 
-    let message = `🩺 *NIROG Diagnostics Test Booking*
+    const total = items.reduce((sum, item) => sum + item.price, 0);
 
-🏥 *Lab:* ${data.name}
+    let message = `🩺 *NIROG Diagnostics Test Booking*\n\n📋 *Selected Tests:*\n\n`;
 
-📋 *Selected Tests:*
-
-`;
-
-    selectedTests.forEach((test,index)=>{
-
-        message += `${index+1}. ${test.name} - ₹${test.price}\n`;
-
+    items.forEach((item, index) => {
+        message += `${index + 1}. ${item.testName} (${item.labName}) - ₹${item.price}\n`;
     });
 
-    message += `
-
-💰 *Total Amount:* ₹${total}
-
-🚑 Home Sample Collection Required.
-
-Kindly confirm the booking and share your address for sample collection.
-
-Thank you.`;
+    message += `\n💰 *Total Amount:* ₹${total}\n\n🚑 Home Sample Collection Required.\n\nKindly confirm the booking and share your address for sample collection.\n\nThank you.`;
 
     const whatsappNumber = "919114124211";
-
-    window.open(
-        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
-        "_blank"
-    );
-
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
 });
+
+init();

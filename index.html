@@ -31,7 +31,105 @@
 
 <main>
 
+    <section class="hero-banner">
+        <div class="container hero-banner-grid">
 
+            <!-- LEFT: Sliding promo banner -->
+            <div class="banner-slider">
+                <div class="swiper heroSwiper">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="promo-slide promo-slide-1">
+                                <span class="promo-tag">Most Booked</span>
+                                <h2>Full Body Checkup</h2>
+                                <p>90+ Parameters Covered</p>
+                                <div class="promo-price">
+                                    <span class="mrp">₹2999</span>
+                                    <span class="offer">₹1299</span>
+                                </div>
+                                <a href="booking.html" class="promo-btn">Book Now</a>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="promo-slide promo-slide-2">
+                                <span class="promo-tag">Free Home Collection</span>
+                                <h2>Diabetes Care Package</h2>
+                                <p>HbA1c, Fasting & PP Sugar</p>
+                                <div class="promo-price">
+                                    <span class="mrp">₹899</span>
+                                    <span class="offer">₹499</span>
+                                </div>
+                                <a href="booking.html" class="promo-btn">Book Now</a>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="promo-slide promo-slide-3">
+                                <span class="promo-tag">Reports in 24 Hrs</span>
+                                <h2>Thyroid Profile</h2>
+                                <p>T3, T4 & TSH Test</p>
+                                <div class="promo-price">
+                                    <span class="mrp">₹699</span>
+                                    <span class="offer">₹349</span>
+                                </div>
+                                <a href="booking.html" class="promo-btn">Book Now</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Booking sidebar card -->
+            <div class="booking-card">
+
+                <h3>Book A Test Online</h3>
+
+                <form class="booking-search" onsubmit="return false;">
+                    <input type="text" id="testSearch" placeholder="Search Test and Packages">
+                    <button type="submit" aria-label="Search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+
+                <div class="or-divider"><span>OR</span></div>
+
+                <a href="tests.html" class="booking-option">
+                    Choose Popular Tests / Packages
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+                <a href="packages.html#radiology" class="booking-option">
+                    Book Radiology / Scan
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+                <div class="quick-actions">
+
+                    <a href="reports.html" class="quick-action">
+                        <span class="quick-icon"><i class="fa-solid fa-file-arrow-down"></i></span>
+                        Download Report
+                    </a>
+
+                    <a href="booking.html#upload" class="quick-action">
+                        <span class="quick-icon"><i class="fa-solid fa-file-arrow-up"></i></span>
+                        Upload Prescription
+                    </a>
+
+                    <a href="https://maps.google.com/?q=NIROG+Diagnostics" target="_blank" class="quick-action">
+                        <span class="quick-icon"><i class="fa-solid fa-location-dot"></i></span>
+                        Find Nearest Center
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
 
     <section class="partner-section">
 

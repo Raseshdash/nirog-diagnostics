@@ -308,3 +308,83 @@ margin-top:30px;
     margin-bottom: 12px;
     text-align: center;
 }
+@media (max-width:991px){
+
+    .booking-card{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;                 /* cancel the desktop sticky top offset */
+        z-index: 1000;
+        border-radius: 20px 20px 0 0;
+        box-shadow: 0 -10px 30px rgba(0,0,0,.15);
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 14px 18px;
+        text-align: left;
+    }
+
+    /* Hide the verbose parts — no room for them in a slim bottom bar */
+    .booking-card h3,
+    .booking-card p:not(#lockNote){
+        display: none;
+    }
+
+    #lockNote{
+        position: absolute;
+        top: -26px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 11px;
+        background: #eef5ff;
+        padding: 4px 10px;
+        border-radius: 10px 10px 0 0;
+        margin: 0;
+    }
+
+    #totalPrice{
+        font-size: 22px;
+        margin: 0;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .book-btn{
+        width: auto;
+        padding: 12px 24px;
+        font-size: 15px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    /* Stop the fixed bar from covering the last test rows / FAQ etc */
+    body{
+        padding-bottom: 86px;
+    }
+
+    /* Since the card is now fixed, don't let the empty col-lg-4 space
+       collapse oddly in the grid */
+    .test-section .col-lg-4{
+        margin-top: 0;
+    }
+}
+
+@media (max-width:480px){
+    #totalPrice{
+        font-size: 19px;
+    }
+
+    .book-btn{
+        padding: 11px 18px;
+        font-size: 14px;
+    }
+
+    .book-btn i{
+        margin-right: 4px;
+    }
+}

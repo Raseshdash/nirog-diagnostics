@@ -415,11 +415,10 @@
 }
 
 /* Floating buttons */
-
 .call-float,
 .whatsapp-float {
     position: fixed;
-    bottom: 25px;
+    right: 25px;
     width: 56px;
     height: 56px;
     border-radius: 50%;
@@ -435,18 +434,18 @@
 }
 
 .call-float {
-    left: 25px;
+    bottom: 95px;
     background: #0d6efd;
 }
 
 .whatsapp-float {
-    right: 25px;
+    bottom: 25px;
     background: #25D366;
 }
 
 .call-float:hover,
 .whatsapp-float:hover {
-    transform: translateY(-5px) scale(1.05);
+    transform: scale(1.08);
     color: #fff;
 }
 
@@ -463,21 +462,21 @@
         gap: 35px;
     }
 
-    .call-float,
-    .whatsapp-float {
-        width: 50px;
-        height: 50px;
-        bottom: 18px;
-        font-size: 21px;
+     .call-float,
+        .whatsapp-float {
+            right: 16px;
+            width: 50px;
+            height: 50px;
+            font-size: 21px;
+        }
+ .call-float {
+        bottom: 82px;
     }
 
-    .call-float {
-        left: 16px;
-    }
 
-    .whatsapp-float {
-        right: 16px;
-    }
+      .whatsapp-float {
+           bottom: 20px;
+       }
 
     .copyright {
         margin-top: 35px;

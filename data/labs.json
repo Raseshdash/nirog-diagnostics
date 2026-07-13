@@ -7,28 +7,65 @@
       "rating": 4.8,
       "categories": {
         "blood": [
-          { "id": "cbc", "name": "CBC", "price": 299 },
-          { "id": "lft", "name": "LFT", "price": 699 },
-          { "id": "rft", "name": "RFT", "price": 599 }
+          { "id": "cbc", "name": "Complete Blood Count (CBC)", "price": 299 },
+          { "id": "esr", "name": "ESR (Erythrocyte Sedimentation Rate)", "price": 150 },
+          { "id": "lft", "name": "Liver Function Test (LFT)", "price": 699 },
+          { "id": "rft", "name": "Kidney / Renal Function Test (RFT)", "price": 599 },
+          { "id": "blood_sugar_f", "name": "Fasting Blood Sugar (FBS)", "price": 120 },
+          { "id": "blood_sugar_pp", "name": "Post Prandial Blood Sugar (PPBS)", "price": 120 },
+          { "id": "hba1c", "name": "HbA1c (3-Month Sugar Average)", "price": 450 },
+          { "id": "lipid_profile", "name": "Lipid Profile (Cholesterol Panel)", "price": 599 },
+          { "id": "vitamin_d", "name": "Vitamin D (25-OH)", "price": 1200 },
+          { "id": "vitamin_b12", "name": "Vitamin B12", "price": 800 },
+          { "id": "iron_studies", "name": "Iron Studies (Serum Iron, TIBC, Ferritin)", "price": 950 },
+          { "id": "calcium", "name": "Serum Calcium", "price": 250 },
+          { "id": "uric_acid", "name": "Uric Acid", "price": 200 },
+          { "id": "crp", "name": "CRP (C-Reactive Protein)", "price": 500 },
+          { "id": "blood_grouping", "name": "Blood Grouping & Rh Typing", "price": 150 },
+          { "id": "widal", "name": "Widal Test (Typhoid)", "price": 250 },
+          { "id": "dengue_ns1", "name": "Dengue NS1 Antigen", "price": 800 },
+          { "id": "malaria", "name": "Malaria Antigen Test", "price": 350 }
         ],
         "urine": [
-          { "id": "routine_urine", "name": "Routine Urine", "price": 250 },
-          { "id": "urine_culture", "name": "Urine Culture", "price": 550 },
-          { "id": "protein_test", "name": "Protein Test", "price": 300 }
+          { "id": "routine_urine", "name": "Routine & Microscopic Urine Exam", "price": 250 },
+          { "id": "urine_culture", "name": "Urine Culture & Sensitivity", "price": 550 },
+          { "id": "protein_test", "name": "Urine Protein (24-Hour)", "price": 300 },
+          { "id": "urine_microalbumin", "name": "Urine Microalbumin", "price": 450 },
+          { "id": "urine_pregnancy", "name": "Urine Pregnancy Test (UPT)", "price": 150 }
         ],
         "thyroid": [
-          { "id": "t3", "name": "T3", "price": 350 },
-          { "id": "t4", "name": "T4", "price": 350 },
-          { "id": "tsh", "name": "TSH", "price": 450 },
-          { "id": "thyroid_profile", "name": "Thyroid Profile", "price": 899 }
+          { "id": "t3", "name": "T3 (Triiodothyronine)", "price": 350 },
+          { "id": "t4", "name": "T4 (Thyroxine)", "price": 350 },
+          { "id": "tsh", "name": "TSH (Thyroid Stimulating Hormone)", "price": 450 },
+          { "id": "thyroid_profile", "name": "Complete Thyroid Profile (T3, T4, TSH)", "price": 899 },
+          { "id": "anti_tpo", "name": "Anti-TPO Antibody", "price": 950 }
+        ],
+        "cardiac": [
+          { "id": "ecg", "name": "ECG (Electrocardiogram)", "price": 300 },
+          { "id": "troponin_i", "name": "Troponin I (Cardiac Marker)", "price": 900 },
+          { "id": "ck_mb", "name": "CK-MB (Cardiac Enzyme)", "price": 650 },
+          { "id": "homocysteine", "name": "Homocysteine", "price": 1100 }
+        ],
+        "hormones": [
+          { "id": "psa", "name": "PSA (Prostate Specific Antigen)", "price": 750 },
+          { "id": "testosterone", "name": "Testosterone (Total)", "price": 900 },
+          { "id": "estrogen", "name": "Estrogen (Estradiol)", "price": 950 },
+          { "id": "fsh_lh", "name": "FSH & LH", "price": 1100 },
+          { "id": "prolactin", "name": "Prolactin", "price": 700 }
         ],
         "packages": [
-          { "id": "basic_health", "name": "Basic Health Package", "price": 1499 },
-          { "id": "executive", "name": "Executive Package", "price": 2999 },
-          { "id": "full_body", "name": "Full Body Checkup", "price": 4999 }
+          { "id": "basic_health", "name": "Basic Health Package (25+ Tests)", "price": 1499 },
+          { "id": "executive", "name": "Executive Package (55+ Tests)", "price": 2999 },
+          { "id": "full_body", "name": "Full Body Checkup (70+ Tests)", "price": 4999 },
+          { "id": "diabetes_package", "name": "Diabetes Care Package", "price": 999 },
+          { "id": "womens_health", "name": "Women's Health Package", "price": 2499 },
+          { "id": "senior_citizen", "name": "Senior Citizen Package", "price": 3499 },
+          { "id": "cardiac_package", "name": "Cardiac Risk Package", "price": 2199 },
+          { "id": "fever_panel", "name": "Fever Panel (Typhoid, Malaria, Dengue, CBC)", "price": 1299 }
         ]
       }
     },
+
     "genx": {
       "name": "GenX Diagnostics",
       "logo": "images/labs/genx.png",
@@ -36,19 +73,124 @@
       "rating": 4.6,
       "categories": {
         "blood": [
-          { "id": "cbc", "name": "CBC", "price": 320 },
-          { "id": "lft", "name": "LFT", "price": 720 }
+          { "id": "cbc", "name": "Complete Blood Count (CBC)", "price": 320 },
+          { "id": "esr", "name": "ESR (Erythrocyte Sedimentation Rate)", "price": 170 },
+          { "id": "lft", "name": "Liver Function Test (LFT)", "price": 720 },
+          { "id": "rft", "name": "Kidney / Renal Function Test (RFT)", "price": 620 },
+          { "id": "blood_sugar_f", "name": "Fasting Blood Sugar (FBS)", "price": 130 },
+          { "id": "hba1c", "name": "HbA1c (3-Month Sugar Average)", "price": 470 },
+          { "id": "lipid_profile", "name": "Lipid Profile (Cholesterol Panel)", "price": 630 },
+          { "id": "vitamin_d", "name": "Vitamin D (25-OH)", "price": 1250 },
+          { "id": "vitamin_b12", "name": "Vitamin B12", "price": 820 },
+          { "id": "uric_acid", "name": "Uric Acid", "price": 220 },
+          { "id": "crp", "name": "CRP (C-Reactive Protein)", "price": 520 },
+          { "id": "dengue_ns1", "name": "Dengue NS1 Antigen", "price": 850 }
         ],
         "urine": [
-          { "id": "routine_urine", "name": "Routine Urine", "price": 280 },
-          { "id": "urine_culture", "name": "Urine Culture", "price": 600 }
+          { "id": "routine_urine", "name": "Routine & Microscopic Urine Exam", "price": 280 },
+          { "id": "urine_culture", "name": "Urine Culture & Sensitivity", "price": 600 },
+          { "id": "urine_pregnancy", "name": "Urine Pregnancy Test (UPT)", "price": 170 }
         ],
         "thyroid": [
-          { "id": "tsh", "name": "TSH", "price": 500 },
-          { "id": "thyroid_profile", "name": "Thyroid Profile", "price": 950 }
+          { "id": "tsh", "name": "TSH (Thyroid Stimulating Hormone)", "price": 500 },
+          { "id": "thyroid_profile", "name": "Complete Thyroid Profile (T3, T4, TSH)", "price": 950 }
+        ],
+        "cardiac": [
+          { "id": "ecg", "name": "ECG (Electrocardiogram)", "price": 320 },
+          { "id": "troponin_i", "name": "Troponin I (Cardiac Marker)", "price": 950 }
+        ],
+        "hormones": [
+          { "id": "psa", "name": "PSA (Prostate Specific Antigen)", "price": 780 },
+          { "id": "testosterone", "name": "Testosterone (Total)", "price": 930 }
         ],
         "packages": [
-          { "id": "full_body", "name": "Full Body Checkup", "price": 4500 }
+          { "id": "full_body", "name": "Full Body Checkup (65+ Tests)", "price": 4500 },
+          { "id": "diabetes_package", "name": "Diabetes Care Package", "price": 1050 },
+          { "id": "womens_health", "name": "Women's Health Package", "price": 2600 }
+        ]
+      }
+    },
+
+    "vitalpath": {
+      "name": "Vital Path Labs",
+      "logo": "images/labs/vitalpath.png",
+      "discount": "18% OFF",
+      "rating": 4.7,
+      "categories": {
+        "blood": [
+          { "id": "cbc", "name": "Complete Blood Count (CBC)", "price": 280 },
+          { "id": "esr", "name": "ESR (Erythrocyte Sedimentation Rate)", "price": 140 },
+          { "id": "lft", "name": "Liver Function Test (LFT)", "price": 650 },
+          { "id": "rft", "name": "Kidney / Renal Function Test (RFT)", "price": 580 },
+          { "id": "blood_sugar_f", "name": "Fasting Blood Sugar (FBS)", "price": 110 },
+          { "id": "blood_sugar_pp", "name": "Post Prandial Blood Sugar (PPBS)", "price": 110 },
+          { "id": "hba1c", "name": "HbA1c (3-Month Sugar Average)", "price": 420 },
+          { "id": "lipid_profile", "name": "Lipid Profile (Cholesterol Panel)", "price": 570 },
+          { "id": "vitamin_d", "name": "Vitamin D (25-OH)", "price": 1100 },
+          { "id": "vitamin_b12", "name": "Vitamin B12", "price": 750 },
+          { "id": "iron_studies", "name": "Iron Studies (Serum Iron, TIBC, Ferritin)", "price": 900 },
+          { "id": "uric_acid", "name": "Uric Acid", "price": 190 },
+          { "id": "crp", "name": "CRP (C-Reactive Protein)", "price": 480 },
+          { "id": "widal", "name": "Widal Test (Typhoid)", "price": 230 },
+          { "id": "malaria", "name": "Malaria Antigen Test", "price": 320 }
+        ],
+        "urine": [
+          { "id": "routine_urine", "name": "Routine & Microscopic Urine Exam", "price": 230 },
+          { "id": "urine_culture", "name": "Urine Culture & Sensitivity", "price": 520 },
+          { "id": "urine_microalbumin", "name": "Urine Microalbumin", "price": 420 }
+        ],
+        "thyroid": [
+          { "id": "t3", "name": "T3 (Triiodothyronine)", "price": 330 },
+          { "id": "t4", "name": "T4 (Thyroxine)", "price": 330 },
+          { "id": "tsh", "name": "TSH (Thyroid Stimulating Hormone)", "price": 420 },
+          { "id": "thyroid_profile", "name": "Complete Thyroid Profile (T3, T4, TSH)", "price": 850 }
+        ],
+        "cardiac": [
+          { "id": "ecg", "name": "ECG (Electrocardiogram)", "price": 280 },
+          { "id": "ck_mb", "name": "CK-MB (Cardiac Enzyme)", "price": 620 }
+        ],
+        "packages": [
+          { "id": "basic_health", "name": "Basic Health Package (20+ Tests)", "price": 1350 },
+          { "id": "full_body", "name": "Full Body Checkup (60+ Tests)", "price": 4599 },
+          { "id": "senior_citizen", "name": "Senior Citizen Package", "price": 3299 },
+          { "id": "fever_panel", "name": "Fever Panel (Typhoid, Malaria, Dengue, CBC)", "price": 1199 }
+        ]
+      }
+    },
+
+    "pathkind": {
+      "name": "Pathkind Labs",
+      "logo": "images/labs/pathkind.png",
+      "discount": "12% OFF",
+      "rating": 4.5,
+      "categories": {
+        "blood": [
+          { "id": "cbc", "name": "Complete Blood Count (CBC)", "price": 310 },
+          { "id": "lft", "name": "Liver Function Test (LFT)", "price": 680 },
+          { "id": "rft", "name": "Kidney / Renal Function Test (RFT)", "price": 610 },
+          { "id": "hba1c", "name": "HbA1c (3-Month Sugar Average)", "price": 440 },
+          { "id": "lipid_profile", "name": "Lipid Profile (Cholesterol Panel)", "price": 610 },
+          { "id": "vitamin_d", "name": "Vitamin D (25-OH)", "price": 1180 },
+          { "id": "vitamin_b12", "name": "Vitamin B12", "price": 790 },
+          { "id": "uric_acid", "name": "Uric Acid", "price": 210 },
+          { "id": "dengue_ns1", "name": "Dengue NS1 Antigen", "price": 820 }
+        ],
+        "urine": [
+          { "id": "routine_urine", "name": "Routine & Microscopic Urine Exam", "price": 260 },
+          { "id": "urine_pregnancy", "name": "Urine Pregnancy Test (UPT)", "price": 160 }
+        ],
+        "thyroid": [
+          { "id": "tsh", "name": "TSH (Thyroid Stimulating Hormone)", "price": 460 },
+          { "id": "thyroid_profile", "name": "Complete Thyroid Profile (T3, T4, TSH)", "price": 880 }
+        ],
+        "hormones": [
+          { "id": "psa", "name": "PSA (Prostate Specific Antigen)", "price": 760 },
+          { "id": "fsh_lh", "name": "FSH & LH", "price": 1050 }
+        ],
+        "packages": [
+          { "id": "full_body", "name": "Full Body Checkup (68+ Tests)", "price": 4799 },
+          { "id": "womens_health", "name": "Women's Health Package", "price": 2450 },
+          { "id": "cardiac_package", "name": "Cardiac Risk Package", "price": 2099 }
         ]
       }
     }
@@ -64,25 +206,41 @@
         "xray": [
           { "id": "chest_xray", "name": "Chest X-Ray", "price": 500 },
           { "id": "spine_xray", "name": "Spine X-Ray", "price": 650 },
-          { "id": "knee_xray", "name": "Knee X-Ray", "price": 600 }
+          { "id": "knee_xray", "name": "Knee X-Ray", "price": 600 },
+          { "id": "hand_xray", "name": "Hand / Wrist X-Ray", "price": 500 },
+          { "id": "skull_xray", "name": "Skull X-Ray", "price": 700 },
+          { "id": "pelvis_xray", "name": "Pelvis X-Ray", "price": 650 }
         ],
         "ultrasound": [
-          { "id": "whole_abdomen", "name": "Whole Abdomen", "price": 1200 },
-          { "id": "pregnancy_scan", "name": "Pregnancy Scan", "price": 1500 },
-          { "id": "pelvis_scan", "name": "Pelvis Scan", "price": 1000 }
+          { "id": "whole_abdomen", "name": "USG Whole Abdomen", "price": 1200 },
+          { "id": "pregnancy_scan", "name": "Pregnancy / Obstetric Scan", "price": 1500 },
+          { "id": "pelvis_scan", "name": "USG Pelvis", "price": 1000 },
+          { "id": "kub_scan", "name": "USG KUB (Kidney, Ureter, Bladder)", "price": 1100 },
+          { "id": "thyroid_scan", "name": "USG Thyroid", "price": 900 },
+          { "id": "breast_scan", "name": "USG Breast", "price": 1300 },
+          { "id": "doppler_scan", "name": "Doppler Study", "price": 1800 }
         ],
         "ctscan": [
-          { "id": "ct_brain", "name": "CT Brain", "price": 3200 },
+          { "id": "ct_brain", "name": "CT Brain (Plain)", "price": 3200 },
           { "id": "ct_chest", "name": "CT Chest", "price": 3800 },
-          { "id": "ct_abdomen", "name": "CT Abdomen", "price": 4200 }
+          { "id": "ct_abdomen", "name": "CT Abdomen", "price": 4200 },
+          { "id": "ct_spine", "name": "CT Spine", "price": 4000 },
+          { "id": "ct_kub", "name": "CT KUB", "price": 4100 }
         ],
         "mri": [
-          { "id": "mri_brain", "name": "MRI Brain", "price": 6500 },
-          { "id": "mri_spine", "name": "MRI Spine", "price": 7000 },
-          { "id": "mri_knee", "name": "MRI Knee", "price": 6000 }
+          { "id": "mri_brain", "name": "MRI Brain (Plain)", "price": 6500 },
+          { "id": "mri_spine", "name": "MRI Spine (Whole)", "price": 7000 },
+          { "id": "mri_knee", "name": "MRI Knee", "price": 6000 },
+          { "id": "mri_shoulder", "name": "MRI Shoulder", "price": 6200 },
+          { "id": "mri_whole_abdomen", "name": "MRI Whole Abdomen", "price": 7500 }
+        ],
+        "cardiac_imaging": [
+          { "id": "echo", "name": "2D Echocardiography (ECHO)", "price": 1800 },
+          { "id": "tmt", "name": "TMT (Treadmill Test)", "price": 1500 }
         ]
       }
     },
+
     "genx": {
       "name": "GenX Diagnostics",
       "logo": "images/labs/genx.png",
@@ -91,19 +249,76 @@
       "categories": {
         "xray": [
           { "id": "chest_xray", "name": "Chest X-Ray", "price": 550 },
-          { "id": "hand_xray", "name": "Hand X-Ray", "price": 450 }
+          { "id": "hand_xray", "name": "Hand / Wrist X-Ray", "price": 450 },
+          { "id": "knee_xray", "name": "Knee X-Ray", "price": 620 }
         ],
         "ultrasound": [
-          { "id": "whole_abdomen", "name": "Whole Abdomen", "price": 1300 },
-          { "id": "pelvis_scan", "name": "Pelvis Scan", "price": 1100 }
+          { "id": "whole_abdomen", "name": "USG Whole Abdomen", "price": 1300 },
+          { "id": "pelvis_scan", "name": "USG Pelvis", "price": 1100 },
+          { "id": "kub_scan", "name": "USG KUB (Kidney, Ureter, Bladder)", "price": 1150 }
         ],
         "ctscan": [
-          { "id": "ct_brain", "name": "CT Brain", "price": 3400 },
+          { "id": "ct_brain", "name": "CT Brain (Plain)", "price": 3400 },
           { "id": "ct_chest", "name": "CT Chest", "price": 3900 }
         ],
         "mri": [
-          { "id": "mri_brain", "name": "MRI Brain", "price": 6800 },
-          { "id": "mri_spine", "name": "MRI Spine", "price": 7200 }
+          { "id": "mri_brain", "name": "MRI Brain (Plain)", "price": 6800 },
+          { "id": "mri_spine", "name": "MRI Spine (Whole)", "price": 7200 }
+        ],
+        "cardiac_imaging": [
+          { "id": "echo", "name": "2D Echocardiography (ECHO)", "price": 1900 }
+        ]
+      }
+    },
+
+    "vitalpath": {
+      "name": "Vital Path Labs",
+      "logo": "images/labs/vitalpath.png",
+      "discount": "22% OFF",
+      "rating": 4.7,
+      "categories": {
+        "xray": [
+          { "id": "chest_xray", "name": "Chest X-Ray", "price": 480 },
+          { "id": "spine_xray", "name": "Spine X-Ray", "price": 600 },
+          { "id": "pelvis_xray", "name": "Pelvis X-Ray", "price": 600 }
+        ],
+        "ultrasound": [
+          { "id": "whole_abdomen", "name": "USG Whole Abdomen", "price": 1150 },
+          { "id": "pregnancy_scan", "name": "Pregnancy / Obstetric Scan", "price": 1450 },
+          { "id": "thyroid_scan", "name": "USG Thyroid", "price": 850 }
+        ],
+        "ctscan": [
+          { "id": "ct_brain", "name": "CT Brain (Plain)", "price": 3100 },
+          { "id": "ct_abdomen", "name": "CT Abdomen", "price": 4050 }
+        ],
+        "mri": [
+          { "id": "mri_knee", "name": "MRI Knee", "price": 5800 },
+          { "id": "mri_shoulder", "name": "MRI Shoulder", "price": 6000 }
+        ]
+      }
+    },
+
+    "pathkind": {
+      "name": "Pathkind Labs",
+      "logo": "images/labs/pathkind.png",
+      "discount": "10% OFF",
+      "rating": 4.5,
+      "categories": {
+        "xray": [
+          { "id": "chest_xray", "name": "Chest X-Ray", "price": 520 },
+          { "id": "knee_xray", "name": "Knee X-Ray", "price": 610 }
+        ],
+        "ultrasound": [
+          { "id": "whole_abdomen", "name": "USG Whole Abdomen", "price": 1250 },
+          { "id": "kub_scan", "name": "USG KUB (Kidney, Ureter, Bladder)", "price": 1200 }
+        ],
+        "ctscan": [
+          { "id": "ct_chest", "name": "CT Chest", "price": 3850 },
+          { "id": "ct_spine", "name": "CT Spine", "price": 4150 }
+        ],
+        "mri": [
+          { "id": "mri_brain", "name": "MRI Brain (Plain)", "price": 6700 },
+          { "id": "mri_whole_abdomen", "name": "MRI Whole Abdomen", "price": 7600 }
         ]
       }
     }

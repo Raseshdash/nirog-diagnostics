@@ -15,7 +15,28 @@ document.querySelector(".booking-search").addEventListener("submit", function ()
     }
 });
 
-const whatsappNumber = "918908079448";
+const contactNumber = "918908079448";
+const displayNumber = "+91 89080 79448";
+
+// Call links
+document.querySelectorAll(".footer-call-link").forEach(link => {
+    link.href = `tel:+${contactNumber}`;
+});
+
+// WhatsApp links
+document.querySelectorAll(".footer-whatsapp-link").forEach(link => {
+    link.href = `https://wa.me/${contactNumber}`;
+});
+
+// Display phone number
+document.querySelectorAll(".phone-display").forEach(element => {
+    element.textContent = displayNumber;
+});
+
+// Display WhatsApp number
+document.querySelectorAll(".whatsapp-display").forEach(element => {
+    element.textContent = displayNumber;
+});
 
 function downloadReportWhatsApp(event) {
     event.preventDefault();

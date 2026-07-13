@@ -27,3 +27,41 @@ document.querySelector(".booking-search").addEventListener("submit", function ()
         window.location.href = "tests.html?search=" + encodeURIComponent(query);
     }
 });
+
+const whatsappNumber = "918908079448";
+
+function downloadReportWhatsApp(event) {
+    event.preventDefault();
+
+    const message =
+`Hi NIROG Diagnostics,
+
+I want to get my diagnostic report.
+
+Please help me with my report.
+
+Thank you.`;
+
+    window.open(
+        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
+        "_blank"
+    );
+}
+
+function uploadPrescriptionWhatsApp(event) {
+    event.preventDefault();
+
+    const message =
+`Hi NIROG Diagnostics,
+
+I want to book tests based on my prescription.
+
+I will attach my prescription here. Please check it and share the test details and pricing.
+
+Thank you.`;
+
+    window.open(
+        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
+        "_blank"
+    );
+}

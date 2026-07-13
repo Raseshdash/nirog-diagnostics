@@ -7,19 +7,6 @@ window.addEventListener('scroll', function () {
         header.classList.remove('scrolled');
     }
 });
-const heroSwiper = new Swiper(".heroSwiper", {
-    loop: true,
-    speed: 800,
-    autoplay: {
-        delay: 3500,
-        disableOnInteraction: false
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true
-    }
-});
-
 // Simple search redirect — sends the query to your tests page
 document.querySelector(".booking-search").addEventListener("submit", function () {
     const query = document.getElementById("testSearch").value.trim();

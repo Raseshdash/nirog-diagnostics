@@ -23,6 +23,8 @@ async function loadFragment(id, file) {
 
         });
 
+        // Dispatch CustomEvent to notify that the header has loaded and DOM is ready
+        document.dispatchEvent(new CustomEvent("headerLoaded"));
     }
 
 }

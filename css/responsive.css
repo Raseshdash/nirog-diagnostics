@@ -28,16 +28,50 @@ grid-template-columns:repeat(2,1fr);
 
 @media(max-width:600px){
 
-.service-grid{
+.service-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    padding: 10px 4% 20px 4% !important;
+    margin-left: -4% !important;
+    margin-right: -4% !important;
+    gap: 16px !important;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
 
-grid-template-columns:1fr;
+.service-grid::-webkit-scrollbar {
+    display: none;
+}
 
+.service-grid .card {
+    flex: 0 0 250px !important;
+    scroll-snap-align: start;
+    min-height: auto !important;
+    padding: 35px 24px !important;
+    text-align: center;
 }
 
 .stat-grid{
 
-grid-template-columns:1fr;
+grid-template-columns:repeat(2,1fr);
+gap: 16px;
 
+}
+
+.stat-grid div {
+    padding: 24px 12px;
+    border-radius: var(--radius-sm);
+}
+
+.stat-grid h2 {
+    font-size: 32px;
+    margin-bottom: 4px;
+}
+
+.stat-grid p {
+    font-size: 14px;
 }
 
 .hero h1{

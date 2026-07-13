@@ -1063,108 +1063,53 @@ color:#666;
     background:#f8fbff;
 }
 
-.hero-banner-grid{
-    display:grid;
-    grid-template-columns:2fr 1fr;
-    gap:30px;
-    align-items:stretch;
+.hero-banner-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: start; /* change from stretch */
 }
 
 /* ---------- Slider ---------- */
-.banner-slider{
-    border-radius:24px;
-    overflow:hidden;
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
+.banner-slider {
+    width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,.08);
 }
 
-.heroSwiper,
-.heroSwiper .swiper-wrapper,
-.heroSwiper .swiper-slide{
-    height:100%;
+
+
+.heroSwiper {
+    width: 100%;
+    padding-bottom: 0;
+}
+.heroSwiper .swiper-slide {
+    width: 100%;
+}
+.banner-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1280 / 548;
+    object-fit: contain;
 }
 
-.promo-slide{
-    height:100%;
-    min-height:420px;
-    padding:50px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    color:#fff;
+/* Pagination */
+.heroSwiper .swiper-pagination {
+    bottom: 15px;
+}
+.heroSwiper .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    opacity: .6;
 }
 
-.promo-slide-1{ background:linear-gradient(135deg,#0d47a1,#0d6efd); }
-.promo-slide-2{ background:linear-gradient(135deg,#0b5ed7,#25a1ff); }
-.promo-slide-3{ background:linear-gradient(135deg,#043c8e,#0d6efd); }
-
-.promo-tag{
-    display:inline-block;
-    background:rgba(255,255,255,.18);
-    padding:8px 18px;
-    border-radius:50px;
-    font-size:13px;
-    font-weight:600;
-    margin-bottom:18px;
-    width:fit-content;
-}
-
-.promo-slide h2{
-    font-size:38px;
-    font-weight:700;
-    margin-bottom:10px;
-}
-
-.promo-slide p{
-    font-size:16px;
-    opacity:.9;
-    margin-bottom:20px;
-}
-
-.promo-price{
-    display:flex;
-    align-items:baseline;
-    gap:14px;
-    margin-bottom:28px;
-}
-
-.promo-price .mrp{
-    text-decoration:line-through;
-    opacity:.7;
-    font-size:18px;
-}
-
-.promo-price .offer{
-    font-size:32px;
-    font-weight:700;
-}
-
-.promo-btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width:fit-content;
-    padding:14px 34px;
-    border-radius:50px;
-    background:#fff;
-    color:#0d6efd;
-    font-weight:600;
-    transition:.3s;
-}
-
-.promo-btn:hover{
-    transform:translateY(-3px);
-    color:#0d6efd;
-}
-
-.heroSwiper .swiper-pagination-bullet{
-    background:#fff;
-    opacity:.6;
-}
-
-.heroSwiper .swiper-pagination-bullet-active{
-    opacity:1;
-    width:26px;
-    border-radius:20px;
+.heroSwiper .swiper-pagination-bullet-active {
+    width: 28px;
+    border-radius: 20px;
+    opacity: 1;
 }
 
 /* ---------- Booking Card ---------- */
@@ -1307,17 +1252,6 @@ color:#666;
     color:#fff;
 }
 
-/* ---------- Responsive ---------- */
-@media (max-width:991px){
-    .hero-banner-grid{
-        grid-template-columns:1fr;
-    }
-    .promo-slide{
-        min-height:340px;
-        padding:35px;
-    }
-    .promo-slide h2{ font-size:28px; }
-}
 
 @media (max-width:576px){
     .quick-actions{
@@ -1327,5 +1261,19 @@ color:#666;
         flex-direction:row;
         justify-content:flex-start;
         text-align:left;
+    }
+}
+/* Responsive */
+@media (max-width: 991px) {
+   .hero-banner-grid {
+       display: grid;
+       grid-template-columns: 2fr 1fr;
+       gap: 30px;
+       align-items: start; /* change from stretch */
+   }
+
+    .banner-image {
+        width: 100%;
+        height: auto;
     }
 }

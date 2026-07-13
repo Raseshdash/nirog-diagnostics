@@ -1253,27 +1253,76 @@ color:#666;
 }
 
 
-@media (max-width:576px){
-    .quick-actions{
-        grid-template-columns:1fr;
+@media (max-width: 576px) {
+
+    .hero-banner {
+        padding: 15px 0;
     }
-    .quick-action{
-        flex-direction:row;
-        justify-content:flex-start;
-        text-align:left;
+
+    .hero-banner-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .banner-slider {
+        border-radius: 14px;
+    }
+
+    .booking-card {
+        padding: 22px 18px;
+        border-radius: 20px;
+    }
+
+    .booking-card h3 {
+        font-size: 24px;
+    }
+
+    .quick-actions {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .quick-action {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 12px 4px;
+        font-size: 11px;
     }
 }
 /* Responsive */
+/* ===========================================
+   TABLET + MOBILE HERO RESPONSIVE
+=========================================== */
 @media (max-width: 991px) {
-   .hero-banner-grid {
-       display: grid;
-       grid-template-columns: 2fr 1fr;
-       gap: 30px;
-       align-items: start; /* change from stretch */
-   }
+
+    .hero-banner {
+        padding: 20px 0;
+    }
+
+    .hero-banner-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* IMPORTANT */
+        gap: 20px;
+        width: 100%;
+    }
+
+    .banner-slider,
+    .heroSwiper,
+    .heroSwiper .swiper-wrapper,
+    .heroSwiper .swiper-slide {
+        width: 100%;
+    }
 
     .banner-image {
+        display: block;
         width: 100%;
         height: auto;
+        aspect-ratio: auto;
+        object-fit: contain;
+    }
+
+    .booking-card {
+        width: 100%;
     }
 }

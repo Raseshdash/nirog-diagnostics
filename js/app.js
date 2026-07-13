@@ -52,3 +52,38 @@ Thank you.`;
         "_blank"
     );
 }
+const banners = [
+    "images/banner/banner1.webp",
+    "images/banner/banner2.webp" ,
+   /* "images/banner/banner3.jpg",*/
+    "images/banner/banner4.jpeg"
+];
+
+const bannerWrapper = document.getElementById("bannerWrapper");
+
+if (bannerWrapper) {
+    banners.forEach((banner, index) => {
+        bannerWrapper.insertAdjacentHTML("beforeend", `
+            <div class="swiper-slide">
+                <img
+                    src="${banner}"
+                    class="banner-image"
+                    alt="NIROG Diagnostics Banner ${index + 1}"
+                >
+            </div>
+        `);
+    });
+
+    new Swiper(".heroSwiper", {
+        loop: banners.length > 1,
+        speed: 800,
+        autoplay: banners.length > 1 ? {
+            delay: 3500,
+            disableOnInteraction: false
+        } : false,
+        pagination: {
+            el: ".heroSwiper .swiper-pagination",
+            clickable: true
+        }
+    });
+}

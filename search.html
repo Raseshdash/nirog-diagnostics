@@ -27,16 +27,23 @@
             <h1>Search Tests &amp; Packages</h1>
             <p>Search once — compare prices across all our partner labs instantly.</p>
 
-            <form id="searchForm" class="search-form">
-                <input
-                        type="text"
-                        id="searchInput"
-                        placeholder="Try: CBC, Lipid Profile, Kidney, Thyroid, X-Ray..."
-                        autocomplete="off">
-                <button type="submit">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-            </form>
+            <div class="search-autocomplete-wrapper">
+
+                <form id="searchForm" class="search-form">
+                    <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Try: CBC, Lipid Profile, Kidney, Thyroid, X-Ray..."
+                            autocomplete="off">
+
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+
+                <div id="searchSuggestions" class="search-suggestions"></div>
+
+            </div>
         </div>
     </section>
 

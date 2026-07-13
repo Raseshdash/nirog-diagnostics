@@ -3,17 +3,190 @@ let cart = {};          // key: "type|labKey|testId" -> {labName, testName, pric
 let selectedLab = null; // locks the booking to one lab/company across BOTH labs and radiology results
 
 async function init() {
+
     allData = await loadLabData();
+
     bindSearchForm();
+    bindAutocomplete();
 
     const params = new URLSearchParams(window.location.search);
     const q = params.get("q");
+
     if (q) {
         document.getElementById("searchInput").value = q;
         runSearch(q);
     }
 }
+function getAllTestNames() {
 
+    const names = new Set();
+
+    ["labs", "radiology"].forEach(type => {
+
+        const group = allData[type] || {};
+
+        Object.values(group).forEach(lab => {
+
+            Object.values(lab.categories || {}).forEach(tests => {
+
+                tests.forEach(test => {
+                    names.add(test.name);
+                });
+
+            });
+
+        });
+
+    });
+
+    return Array.from(names).sort();
+}
+
+function bindAutocomplete() {
+
+    const input = document.getElementById("searchInput");
+    const suggestionBox = document.getElementById("searchSuggestions");
+
+    const allTestNames = getAllTestNames();
+
+    input.addEventListener("input", function () {
+
+        const originalQuery = this.value.trim();
+        const query = originalQuery.toLowerCase();
+
+        suggestionBox.innerHTML = "";
+
+        if (!query) {
+            suggestionBox.classList.remove("show");
+            return;
+        }
+
+        // Find all test names containing the typed text anywhere
+        const matches = allTestNames
+            .filter(name =>
+                name.toLowerCase().includes(query)
+            )
+            .sort((a, b) => {
+
+                const aLower = a.toLowerCase();
+                const bLower = b.toLowerCase();
+
+                // Exact match first
+                if (aLower === query) return -1;
+                if (bLower === query) return 1;
+
+                // Names starting with query second
+                if (aLower.startsWith(query) && !bLower.startsWith(query)) {
+                    return -1;
+                }
+
+                if (!aLower.startsWith(query) && bLower.startsWith(query)) {
+                    return 1;
+                }
+
+                return a.localeCompare(b);
+            })
+            .slice(0, 8);
+
+
+        // ---------------------------------
+        // FIRST OPTION: what user typed
+        // ---------------------------------
+
+        const searchItem = document.createElement("div");
+
+        searchItem.className = "suggestion-item typed-search-option";
+
+        searchItem.innerHTML = `
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Search for "<strong>${escapeHtml(originalQuery)}</strong>"</span>
+        `;
+
+        searchItem.addEventListener("click", function () {
+
+            input.value = originalQuery;
+
+            suggestionBox.classList.remove("show");
+
+            runSearch(originalQuery);
+
+            const url = new URL(window.location);
+            url.searchParams.set("q", originalQuery);
+
+            window.history.replaceState({}, "", url);
+        });
+
+        suggestionBox.appendChild(searchItem);
+
+
+        // ---------------------------------
+        // MATCHING TEST OPTIONS
+        // ---------------------------------
+
+        matches.forEach(name => {
+
+            const item = document.createElement("div");
+
+            item.className = "suggestion-item";
+
+            item.innerHTML = `
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span>${highlightMatch(name, originalQuery)}</span>
+            `;
+
+            item.addEventListener("click", function () {
+
+                input.value = name;
+
+                suggestionBox.classList.remove("show");
+
+                runSearch(name);
+
+                const url = new URL(window.location);
+                url.searchParams.set("q", name);
+
+                window.history.replaceState({}, "", url);
+            });
+
+            suggestionBox.appendChild(item);
+
+        });
+
+        suggestionBox.classList.add("show");
+
+    });
+
+
+    document.addEventListener("click", function (e) {
+
+        if (!e.target.closest(".search-autocomplete-wrapper")) {
+            suggestionBox.classList.remove("show");
+        }
+
+    });
+
+}
+function highlightMatch(name, query) {
+
+    const lowerName = name.toLowerCase();
+    const lowerQuery = query.toLowerCase();
+
+    const index = lowerName.indexOf(lowerQuery);
+
+    if (index === -1) {
+        return escapeHtml(name);
+    }
+
+    const before = name.substring(0, index);
+    const matched = name.substring(index, index + query.length);
+    const after = name.substring(index + query.length);
+
+    return `
+        ${escapeHtml(before)}
+        <strong>${escapeHtml(matched)}</strong>
+        ${escapeHtml(after)}
+    `;
+}
 function bindSearchForm() {
     document.getElementById("searchForm").addEventListener("submit", function (e) {
         e.preventDefault();

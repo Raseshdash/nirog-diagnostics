@@ -1,7 +1,8 @@
 let allData = null;
 let currentLab = null;
 let currentCategory = "blood";
-let cart = {};   // key: "labKey|testId" -> {labName, testName, price}
+let cart = {};           // key: "labKey|testId" -> {labName, testName, price}
+let selectedLab = null;  // the ONE lab the user is currently booking with; null = no restriction yet
 
 async function init() {
     allData = await loadLabData();
@@ -33,40 +34,75 @@ function loadCategory(category) {
     (lab.categories[category] || []).forEach(test => {
         const cartKey = `${currentLab}|${test.id}`;
         const checked = cart[cartKey] ? "checked" : "";
+        const locked = isLocked(currentLab);
 
         list.innerHTML += `
-        <tr>
+        <tr class="${locked ? 'locked-row' : ''}">
             <td>${test.name}</td>
             <td>₹${test.price}</td>
             <td>
                 <input type="checkbox"
                        class="testCheck"
                        data-key="${cartKey}"
+                       data-lab="${currentLab}"
                        data-name="${test.name}"
                        data-price="${test.price}"
-                       ${checked}>
+                       ${checked}
+                       ${locked ? "disabled" : ""}>
             </td>
         </tr>`;
     });
 
     bindCheckbox();
-    renderCompareTable(category);
+}
+
+/* Returns true if this lab is currently blocked from selection
+   (i.e. the user already has items from a DIFFERENT lab in the cart) */
+function isLocked(labKey) {
+    return selectedLab !== null && selectedLab !== labKey;
+}
+
+function handleCheckToggle(checkboxEl) {
+    const key = checkboxEl.dataset.key;
+    const labKey = checkboxEl.dataset.lab;
+
+    if (checkboxEl.checked) {
+
+        // Block selection from a second lab
+        if (selectedLab !== null && selectedLab !== labKey) {
+            checkboxEl.checked = false;
+            alert(
+                `You can only book tests from one lab at a time.\n\n` +
+                `You already have tests selected from "${allData.labs[selectedLab].name}". ` +
+                `Please remove those first if you want to switch to "${allData.labs[labKey].name}".`
+            );
+            return;
+        }
+
+        selectedLab = labKey;
+        cart[key] = {
+            labName: allData.labs[labKey].name,
+            testName: checkboxEl.dataset.name,
+            price: Number(checkboxEl.dataset.price)
+        };
+
+    } else {
+        delete cart[key];
+
+        // If cart is now empty, release the lab lock so user can pick a different lab
+        if (Object.keys(cart).length === 0) {
+            selectedLab = null;
+        }
+    }
+
+    updateTotal();
+    refreshLockState();
 }
 
 function bindCheckbox() {
     document.querySelectorAll(".testCheck").forEach(check => {
         check.addEventListener("change", function () {
-            const key = this.dataset.key;
-            if (this.checked) {
-                cart[key] = {
-                    labName: allData.labs[currentLab].name,
-                    testName: this.dataset.name,
-                    price: Number(this.dataset.price)
-                };
-            } else {
-                delete cart[key];
-            }
-            updateTotal();
+            handleCheckToggle(this);
         });
     });
 }
@@ -74,6 +110,21 @@ function bindCheckbox() {
 function updateTotal() {
     const total = Object.values(cart).reduce((sum, item) => sum + item.price, 0);
     document.getElementById("totalPrice").innerHTML = "₹" + total;
+
+    // Show which lab is currently locked in, so the user understands why other labs are greyed out
+    const lockNote = document.getElementById("lockNote");
+    if (lockNote) {
+        lockNote.innerHTML = selectedLab
+            ? `Booking with: <strong>${allData.labs[selectedLab].name}</strong> — clear cart to switch labs.`
+            : "";
+    }
+}
+
+/* Re-renders the main table + compare table so disabled states stay in sync
+   after any checkbox change, without needing a full page reload. */
+function refreshLockState() {
+    loadCategory(currentCategory);
+    renderCompareTable(currentCategory);
 }
 
 function bindCategoryTabs() {
@@ -82,13 +133,12 @@ function bindCategoryTabs() {
             document.querySelectorAll(".category-btn").forEach(b => b.classList.remove("active"));
             this.classList.add("active");
             loadCategory(this.dataset.category);
+            renderCompareTable(this.dataset.category);
         });
     });
 }
 
-/* ---------- COMPARISON TABLE ----------
-   Shows the same category's tests across ALL labs side by side,
-   so the user can pick the cheapest lab per test. */
+/* ---------- COMPARISON TABLE ---------- */
 function renderCompareTable(category) {
     const box = document.getElementById("compareBox");
     if (!box) return;
@@ -107,7 +157,8 @@ function renderCompareTable(category) {
     let html = `<table class="table table-bordered compare-table">
         <thead><tr><th>Test</th>`;
     labKeys.forEach(labKey => {
-        html += `<th>${allData.labs[labKey].name}</th>`;
+        const lockedHeader = isLocked(labKey) ? "text-muted" : "";
+        html += `<th class="${lockedHeader}">${allData.labs[labKey].name}</th>`;
     });
     html += `</tr></thead><tbody>`;
 
@@ -120,7 +171,8 @@ function renderCompareTable(category) {
             } else {
                 const cartKey = `${labKey}|${testId}`;
                 const checked = cart[cartKey] ? "checked" : "";
-                html += `<td>
+                const locked = isLocked(labKey);
+                html += `<td class="${locked ? 'locked-cell' : ''}">
                     ₹${price}
                     <br>
                     <input type="checkbox"
@@ -129,7 +181,8 @@ function renderCompareTable(category) {
                            data-lab="${labKey}"
                            data-name="${row.name}"
                            data-price="${price}"
-                           ${checked}>
+                           ${checked}
+                           ${locked ? "disabled" : ""}>
                 </td>`;
             }
         });
@@ -141,17 +194,7 @@ function renderCompareTable(category) {
 
     document.querySelectorAll(".compareCheck").forEach(check => {
         check.addEventListener("change", function () {
-            const key = this.dataset.key;
-            if (this.checked) {
-                cart[key] = {
-                    labName: allData.labs[this.dataset.lab].name,
-                    testName: this.dataset.name,
-                    price: Number(this.dataset.price)
-                };
-            } else {
-                delete cart[key];
-            }
-            updateTotal();
+            handleCheckToggle(this);
         });
     });
 }
@@ -165,6 +208,7 @@ function bindCompareToggle() {
         const isHidden = compareBox.style.display === "none" || !compareBox.style.display;
         compareBox.style.display = isHidden ? "block" : "none";
         toggleBtn.textContent = isHidden ? "Hide Price Comparison" : "Compare Prices Across Labs";
+        if (isHidden) renderCompareTable(currentCategory);
     });
 }
 
@@ -177,11 +221,12 @@ document.getElementById("bookNowBtn").addEventListener("click", function () {
     }
 
     const total = items.reduce((sum, item) => sum + item.price, 0);
+    const labName = items[0].labName; // all items are guaranteed to be from the same lab now
 
-    let message = `🩺 *NIROG Diagnostics Test Booking*\n\n📋 *Selected Tests:*\n\n`;
+    let message = `🩺 *NIROG Diagnostics Test Booking*\n\n🏥 *Lab:* ${labName}\n\n📋 *Selected Tests:*\n\n`;
 
     items.forEach((item, index) => {
-        message += `${index + 1}. ${item.testName} (${item.labName}) - ₹${item.price}\n`;
+        message += `${index + 1}. ${item.testName} - ₹${item.price}\n`;
     });
 
     message += `\n💰 *Total Amount:* ₹${total}\n\n🚑 Home Sample Collection Required.\n\nKindly confirm the booking and share your address for sample collection.\n\nThank you.`;

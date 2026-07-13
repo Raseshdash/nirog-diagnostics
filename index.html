@@ -88,7 +88,7 @@
 
                 <h3>Book A Test Online</h3>
 
-                <form class="booking-search" onsubmit="return false;">
+                <form class="booking-search" >
                     <input type="text" id="testSearch" placeholder="Search Test and Packages">
                     <button type="submit" aria-label="Search">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -1136,6 +1136,19 @@
 
     }
 
+    });
+    document.querySelector(".booking-search")
+    .addEventListener("submit", function(e){
+
+        e.preventDefault();
+
+        const query =
+            document.getElementById("testSearch").value.trim();
+
+        if(query){
+            window.location.href =
+                "search.html?q=" + encodeURIComponent(query);
+        }
     });
 
 </script>

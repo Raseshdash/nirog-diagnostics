@@ -193,6 +193,381 @@
           { "id": "cardiac_package", "name": "Cardiac Risk Package", "price": 2099 }
         ]
       }
+    },
+    "redcliffe": {
+      "name": "Redcliffe Labs",
+      "logo": "images/labs/redcliffe.png",
+      "discount": "",
+      "rating": 4.7,
+      "categories": {
+        "pathology": [
+          {
+            "id": "culture_aerobic_blood_bactec",
+            "name": "Culture Aerobic Blood By Bactec",
+            "price": 1300
+          },
+          {
+            "id": "culture_aerobic_body_fluid_bactec",
+            "name": "Culture Aerobic Body Fluid By Bactec",
+            "price": 1300
+          },
+          {
+            "id": "culture_anaerobic_fluid_bactec",
+            "name": "Culture Anaerobic Fluid By Bactec",
+            "price": 1400
+          },
+          {
+            "id": "culture_anaerobic_blood_bactec",
+            "name": "Culture Anaerobic Blood By Bactec",
+            "price": 1400
+          },
+          {
+            "id": "anca_ifa",
+            "name": "ANCA By IFA",
+            "price": 2040
+          },
+          {
+            "id": "histopathology_large_tissue_biopsy",
+            "name": "Histopathology: Large Tissue Biopsy",
+            "price": 1500
+          },
+          {
+            "id": "boh_profile_basic",
+            "name": "Bad Obstetric History (BOH) Profile Basic",
+            "price": 5799
+          },
+          {
+            "id": "pcos_advance_screening",
+            "name": "PCOS Advance Screening Package",
+            "price": 1999
+          },
+          {
+            "id": "anti_thyroglobulin_antibodies",
+            "name": "Anti Thyroglobulin Antibodies (ATG)",
+            "price": 1400
+          },
+          {
+            "id": "anti_mitochondrial_antibody_ifa",
+            "name": "Anti Mitochondrial Antibody (AMA) By IFA",
+            "price": 3100
+          },
+          {
+            "id": "il_6",
+            "name": "IL-6 (Interleukin-6)",
+            "price": 2400
+          },
+          {
+            "id": "d_dimer",
+            "name": "D-Dimer (Quantitative)",
+            "price": 1050
+          },
+          {
+            "id": "homocysteine",
+            "name": "Homocysteine",
+            "price": 899
+          },
+          {
+            "id": "insulin_fasting",
+            "name": "Insulin Fasting",
+            "price": 800
+          },
+          {
+            "id": "insulin_pp",
+            "name": "Insulin PP (Post Prandial)",
+            "price": 800
+          },
+          {
+            "id": "folic_acid",
+            "name": "Folic Acid / Folate",
+            "price": 999
+          },
+          {
+            "id": "kft_with_urine",
+            "name": "Kidney Function Test (KFT) With Urine",
+            "price": 500
+          },
+          {
+            "id": "ca_15_3",
+            "name": "CA 15.3 (Breast Cancer Marker)",
+            "price": 1500
+          },
+          {
+            "id": "cpk_mb",
+            "name": "Creatine Phosphokinase MB (CPK MB)",
+            "price": 400
+          },
+          {
+            "id": "ige_total",
+            "name": "Immunoglobulin E (IgE Total)",
+            "price": 599
+          },
+          {
+            "id": "triple_marker",
+            "name": "Triple Marker Test",
+            "price": 2799
+          },
+          {
+            "id": "hla_b27_flowcytometry",
+            "name": "HLA B27 By Flowcytometry",
+            "price": 2400
+          },
+          {
+            "id": "histopathology_medium_tissue_biopsy",
+            "name": "Histopathology: Medium Tissue Biopsy",
+            "price": 900
+          },
+          {
+            "id": "progesterone",
+            "name": "Progesterone",
+            "price": 550
+          },
+          {
+            "id": "anti_cardiolipin_iga",
+            "name": "Anti Cardiolipin IgA Antibodies",
+            "price": 900
+          },
+          {
+            "id": "anti_cardiolipin_igg",
+            "name": "Anti Cardiolipin IgG Antibodies",
+            "price": 900
+          },
+          {
+            "id": "anti_cardiolipin_igm",
+            "name": "Anti Cardiolipin IgM Antibodies",
+            "price": 900
+          },
+          {
+            "id": "afp_maternal_marker",
+            "name": "Alpha Fetoprotein (AFP), Maternal Marker",
+            "price": 900
+          },
+          {
+            "id": "karyotyping_blood_lympho_culture",
+            "name": "Karyotyping: Blood Lympho Culture, Single",
+            "price": 3200
+          },
+          {
+            "id": "double_marker_roche",
+            "name": "Double Marker Test - Roche",
+            "price": 2400
+          },
+          {
+            "id": "anti_ccp",
+            "name": "Anti Cyclic Citrullinated Peptide Antibodies (Anti CCP)",
+            "price": 1900
+          },
+          {
+            "id": "ttg_iga",
+            "name": "Tissue Transglutaminase IgA Antibody (tTG IgA)",
+            "price": 1100
+          },
+          {
+            "id": "hemoglobin_variant_analysis",
+            "name": "Hemoglobin Variant Analysis (HB HPLC)",
+            "price": 950
+          },
+          {
+            "id": "hcg_maternal_marker",
+            "name": "Human Chorionic Gonadotropin (HCG), Maternal Marker",
+            "price": 650
+          },
+          {
+            "id": "hba1c",
+            "name": "HbA1C (Glycosylated Haemoglobin)",
+            "price": 450
+          },
+          {
+            "id": "urine_culture",
+            "name": "Culture, Urine",
+            "price": 500
+          },
+          {
+            "id": "amh",
+            "name": "Anti Mullerian Hormone (AMH)",
+            "price": 1999
+          },
+          {
+            "id": "vitamin_d",
+            "name": "Vitamin D 25 Hydroxy",
+            "price": 1500
+          },
+          {
+            "id": "tb_pcr",
+            "name": "TB PCR",
+            "price": 2200
+          },
+          {
+            "id": "ca_125",
+            "name": "CA 125 (Ovarian Cancer Marker)",
+            "price": 1300
+          },
+          {
+            "id": "torch_panel_igm",
+            "name": "Torch Panel IgM (5 Parameters)",
+            "price": 1600
+          },
+          {
+            "id": "torch_panel_igg",
+            "name": "Torch Panel IgG (5 Parameters)",
+            "price": 1600
+          },
+          {
+            "id": "torch_panel_igg_igm",
+            "name": "Torch Panel IgG & IgM (10 Parameters)",
+            "price": 3000
+          },
+          {
+            "id": "psa",
+            "name": "Prostate Specific Antigen (PSA) Total",
+            "price": 730
+          },
+          {
+            "id": "vitamin_b12",
+            "name": "Vitamin B12",
+            "price": 1200
+          },
+          {
+            "id": "thyroid_profile_free",
+            "name": "Thyroid Profile Free",
+            "price": 900
+          },
+          {
+            "id": "ana_ifa",
+            "name": "Anti Nuclear Antibodies (ANA) By IFA",
+            "price": 950
+          },
+          {
+            "id": "estradiol",
+            "name": "Estradiol (E2)",
+            "price": 620
+          },
+          {
+            "id": "testosterone",
+            "name": "Testosterone Total",
+            "price": 630
+          },
+          {
+            "id": "ft4_tsh",
+            "name": "FT4 & TSH 3rd Gen",
+            "price": 399
+          },
+          {
+            "id": "lipid_profile",
+            "name": "Lipid Profile",
+            "price": 950
+          },
+          {
+            "id": "fsh",
+            "name": "Follicle Stimulating Hormone (FSH)",
+            "price": 550
+          },
+          {
+            "id": "lh",
+            "name": "Luteinizing Hormone (LH)",
+            "price": 550
+          },
+          {
+            "id": "prolactin",
+            "name": "Prolactin (PRL)",
+            "price": 500
+          },
+          {
+            "id": "female_hormones_screening",
+            "name": "Female Hormones Screening (LH, FSH, PRL)",
+            "price": 799
+          },
+          {
+            "id": "lh_fsh",
+            "name": "Luteinizing Hormone (LH) & Follicle Stimulating Hormone (FSH)",
+            "price": 699
+          },
+          {
+            "id": "thyroid_profile",
+            "name": "Thyroid Profile Total",
+            "price": 550
+          },
+          {
+            "id": "tsh",
+            "name": "TSH 3rd Generation",
+            "price": 380
+          },
+          {
+            "id": "quadruple_marker",
+            "name": "Quadruple Marker Test",
+            "price": 3600
+          },
+          {
+            "id": "histopathology_small_tissue_biopsy",
+            "name": "Histopathology: Small Tissue Biopsy",
+            "price": 700
+          },
+          {
+            "id": "hbv_viral_load_rt_pcr",
+            "name": "Hepatitis B (HBV) Viral Load By RT PCR",
+            "price": 5200
+          },
+          {
+            "id": "hcv_viral_load_rt_pcr",
+            "name": "Hepatitis C (HCV) Viral Load By RT PCR",
+            "price": 4800
+          },
+          {
+            "id": "antenatal_early_pregnancy",
+            "name": "Antenatal Care - Early Pregnancy Check Up",
+            "price": 1499
+          },
+          {
+            "id": "lft",
+            "name": "Liver Function Test (LFT)",
+            "price": 900
+          },
+          {
+            "id": "cbc",
+            "name": "Complete Blood Count (CBC)",
+            "price": 330
+          },
+          {
+            "id": "hiv_antibody_rapid",
+            "name": "HIV Antibody, Rapid Card",
+            "price": 399
+          },
+          {
+            "id": "hbsag_rapid",
+            "name": "Hepatitis B Surface Antigen (HBsAg), Rapid Card",
+            "price": 225
+          },
+          {
+            "id": "pap_smear",
+            "name": "Papanicolaou Smear (PAP)",
+            "price": 550
+          },
+          {
+            "id": "cd3_cd4_cd8_flowcytometry",
+            "name": "CD3, CD4 & CD8 By Flowcytometry",
+            "price": 2600
+          },
+          {
+            "id": "quantiferon_tb_igra",
+            "name": "Quantiferon TB IGRA",
+            "price": 2400
+          },
+          {
+            "id": "pancreatic_elastase_stool",
+            "name": "Pancreatic Elastase Stool",
+            "price": 5400
+          },
+          {
+            "id": "insulin_random",
+            "name": "Insulin Random",
+            "price": 800
+          },
+          {
+            "id": "fertility_panel_basic_female",
+            "name": "Fertility Panel - Basic (Female)",
+            "price": 2699
+          }
+        ]
+      }
     }
   },
 

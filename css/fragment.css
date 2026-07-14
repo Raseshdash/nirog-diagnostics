@@ -738,21 +738,20 @@
         position: fixed;
         top: 0;
         right: 0;
-        width: 300px;
+        width: 100%;
         height: 100vh;
         margin-top: 0;
-        padding: 85px 24px 30px;
+        padding: 0;
         background: #ffffff;
-        box-shadow: -10px 0 35px rgba(0,0,0,0.12);
-        z-index: 1000;
+        z-index: 1050;
         display: flex !important;
         flex-direction: column;
         align-items: stretch;
         justify-content: flex-start;
         transform: translateX(100%);
         visibility: hidden;
-        transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), 
-                    visibility 0.45s;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                    visibility 0.4s;
     }
 
     .navbar-collapse.show {
@@ -765,10 +764,66 @@
         display: flex !important; 
     }
 
+    /* Mobile Header inside drawer */
+    .menu-mobile-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 20px;
+        background: #0d6efd;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    
+    .menu-mobile-header .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+    }
+    
+    .menu-mobile-header .logo img {
+        width: 44px;
+        height: auto;
+    }
+    
+    .menu-mobile-header .logo-text h2 {
+        margin: 0;
+        font-size: 17px;
+        color: #ffffff;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    
+    .menu-mobile-header .logo-text p {
+        margin: 2px 0 0;
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1;
+    }
+    
+    .menu-close-btn {
+        background: rgba(255, 255, 255, 0.15);
+        border: none;
+        color: #ffffff;
+        font-size: 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        border-radius: 8px;
+        transition: background 0.2s;
+    }
+    
+    .menu-close-btn:hover {
+        background: rgba(255, 255, 255, 0.25);
+    }
+
     .navbar-nav {
+        padding: 24px 20px;
         flex-direction: column;
         align-items: stretch;
-        gap: 8px;
+        gap: 4px;
         width: 100%;
         margin: 0;
     }
@@ -809,7 +864,7 @@
     .nav-link:hover, 
     .nav-link.active {
         color: #0d6efd !important;
-        background: #f0f7ff;
+        background: #eef5ff;
         padding-left: 18px !important;
     }
 
@@ -820,8 +875,8 @@
     /* ---------- HEADER RIGHT (Action buttons in drawer) ---------- */
     .header-right {
         margin: auto 0 0 0 !important;
-        padding-top: 24px;
-        border-top: 1px solid #f1f5f9;
+        padding: 24px 20px 40px;
+        border-top: 1px solid #e2e8f0;
         display: flex;
         flex-direction: column;
         align-items: stretch;
@@ -840,10 +895,11 @@
     .search-btn {
         width: 100% !important;
         height: auto !important;
-        border-radius: 8px !important;
-        padding: 12px !important;
+        border-radius: 12px !important;
+        padding: 14px !important;
         background: #f1f5f9;
         color: #475569;
+        border: 1px solid #e2e8f0;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -855,7 +911,7 @@
     
     .search-btn:hover {
         background: #e2e8f0;
-        color: #0f172a;
+        color: #1e293b;
     }
 
     .search-btn::after {
@@ -868,14 +924,17 @@
         padding: 14px 20px !important;
         font-size: 15px;
         font-weight: 600;
-        border-radius: 8px !important;
-        box-shadow: 0 4px 12px rgba(13,110,253,0.15) !important;
+        border-radius: 12px !important;
+        background: #0d6efd !important;
+        color: #ffffff !important;
+        box-shadow: 0 4px 12px rgba(13,110,253,0.3) !important;
         transition: all 0.25s ease;
     }
     
     .book-btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(13,110,253,0.25) !important;
+        background: #0b5ed7 !important;
+        box-shadow: 0 6px 16px rgba(13,110,253,0.4) !important;
     }
 }
 

@@ -192,49 +192,18 @@ img {
 
 /* ================= MOBILE MENU ================= */
 
-.menu-backdrop {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
-    backdrop-filter: blur(8px);
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.3s;
-    z-index: 998;
-}
-
+/* Full-screen menu covers entire viewport — backdrop not needed */
+.menu-backdrop,
 .menu-backdrop.active {
-    opacity: 1;
-    visibility: visible;
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
 }
 
 
 
-/* ================= HERO FIX ================= */
 
-.banner-slider {
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
-}
-
-.banner-slider img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-@media (min-width: 768px) {
-    .banner-slider {
-        height: 350px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .banner-slider {
-        height: 420px;
-    }
-}
 
 /* SWIPER FIX */
 .swiper {

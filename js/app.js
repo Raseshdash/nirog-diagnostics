@@ -126,24 +126,39 @@ function initNavbar() {
     if (toggler.dataset.initialized) return true;
     toggler.dataset.initialized = "true";
 
+    // Helper to close menu
+    function closeMenu() {
+        toggler.classList.remove("active");
+        menu.classList.remove("show");
+        backdrop.classList.remove("active");
+    }
+
     toggler.addEventListener("click", function () {
         this.classList.toggle("active");
         menu.classList.toggle("show");
         backdrop.classList.toggle("active");
     });
 
-    backdrop.addEventListener("click", function () {
-        toggler.classList.remove("active");
-        menu.classList.remove("show");
-        backdrop.classList.remove("active");
-    });
+    backdrop.addEventListener("click", closeMenu);
+
+    const closeBtn = document.querySelector(".menu-close-btn");
+    if (closeBtn) {
+        closeBtn.addEventListener("click", closeMenu);
+    }
 
     document.querySelectorAll(".nav-link").forEach(link => {
-        link.addEventListener("click", () => {
-            toggler.classList.remove("active");
-            menu.classList.remove("show");
-            backdrop.classList.remove("active");
-        });
+        link.addEventListener("click", closeMenu);
+    });
+
+    // Auto-close when screen is resized to desktop width (≥ 992px)
+    let resizeTimer;
+    window.addEventListener("resize", function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
+            if (window.innerWidth >= 992) {
+                closeMenu();
+            }
+        }, 100);
     });
 
     console.log("Navbar initialized ✅");

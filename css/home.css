@@ -113,41 +113,47 @@ section {
 ===================================================== */
 
 .hero-banner {
-    padding: 30px 0;
-    background: #f8fbff;
+    padding: 30px 0 40px;
+    background: linear-gradient(160deg, #f0f7ff 0%, #f8fafc 100%);
 }
 
 .hero-banner-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
-    align-items: start;
+    grid-template-columns: 2.2fr 1fr;
+    gap: 28px;
+    align-items: center;
 }
 
 /* Slider */
 
 .banner-slider {
     width: 100%;
-    border-radius: 24px;
+    height: auto;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0,0,0,.08);
+    box-shadow: 0 8px 30px rgba(13,110,253,0.08);
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
 }
 
 .heroSwiper {
     width: 100%;
+    height: auto;
     padding-bottom: 0;
 }
 
 .heroSwiper .swiper-slide {
     width: 100%;
+    height: auto;
 }
 
 .banner-image {
     display: block;
     width: 100%;
     height: auto;
-    aspect-ratio: 1280 / 548;
     object-fit: contain;
+    object-position: center;
 }
 
 .heroSwiper .swiper-pagination {
@@ -172,27 +178,39 @@ section {
 .booking-card {
     background: #fff;
     border-radius: 20px;
-    padding: 20px 22px;
-    box-shadow: 0 15px 40px rgba(0,0,0,.08);
+    padding: 24px 22px;
+    box-shadow: 0 8px 30px rgba(13,110,253,0.07);
+    border: 1px solid rgba(226, 232, 240, 0.8);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
 }
 
 .booking-card h3 {
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 700;
-    color: #0d47a1;
-    margin-bottom: 14px;
+    color: var(--text-title);
+    margin-bottom: 0;
     text-align: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f1f5f9;
 }
 
 .booking-search {
     display: flex;
     align-items: center;
-    border: 2px solid #eaf1ff;
-    border-radius: 50px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
     overflow: hidden;
-    margin-bottom: 12px;
+    background: #f8fafc;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.booking-search:focus-within {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(13,110,253,0.08);
+    background: #fff;
 }
 
 .booking-search input {
@@ -200,17 +218,23 @@ section {
     min-width: 0;
     border: none;
     outline: none;
-    padding: 11px 16px;
+    padding: 12px 14px;
     font-size: 13px;
+    background: transparent;
+    font-family: var(--font-sans);
+    color: var(--text-main);
 }
 
 .booking-search button {
     border: none;
-    background: #0d6efd;
+    background: var(--accent-color);
     color: #fff;
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
     flex-shrink: 0;
+    border-radius: 0 10px 10px 0;
+    transition: background 0.2s ease;
+    cursor: pointer;
 }
 
 .booking-search button:hover {
@@ -243,19 +267,23 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #eef5ff;
-    color: #0d47a1;
+    background: #f8fafc;
+    color: var(--text-title);
     font-weight: 600;
     font-size: 13px;
-    padding: 12px 16px;
-    border-radius: 11px;
-    margin-bottom: 10px;
+    padding: 13px 16px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.25s ease;
+    text-decoration: none;
 }
 
 .booking-option:hover {
-    background: #0d6efd;
+    background: var(--accent-color);
     color: #fff;
-    transform: translateX(4px);
+    border-color: var(--accent-color);
+    transform: translateX(3px);
+    box-shadow: 0 4px 12px rgba(13,110,253,0.15);
 }
 
 .quick-actions {
@@ -1031,32 +1059,32 @@ section {
 
     /* Hero */
     .hero-banner {
-        padding: 20px 0;
+        padding: 20px 0 28px;
     }
 
     .hero-banner-grid {
         grid-template-columns: 1fr;
+        align-items: stretch;
         gap: 20px;
         width: 100%;
     }
 
-    .banner-slider,
-    .heroSwiper,
-    .heroSwiper .swiper-wrapper,
-    .heroSwiper .swiper-slide {
+    .banner-slider {
         width: 100%;
+        height: auto;
+        background: #ffffff;
     }
 
     .banner-image {
         display: block;
         width: 100%;
         height: auto;
-        aspect-ratio: auto;
         object-fit: contain;
     }
 
     .booking-card {
         width: 100%;
+        justify-content: flex-start;
     }
 
     /* Partner Labs */

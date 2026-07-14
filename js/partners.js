@@ -78,68 +78,58 @@ const radiology = [
 
 ];
 
-function renderPartners(id,data){
-
+function renderPartners(id, data) {
     const grid = document.getElementById(id);
-
     grid.innerHTML = "";
 
-    data.forEach(item=>{
-
+    data.forEach(item => {
         grid.innerHTML += `
-
         <a href="${item.url}" class="partner-card">
-
-            <div class="partner-logo">
-                <img src="${item.logo}" alt="${item.name}">
+            <div class="partner-card-body">
+                <div class="partner-logo-container">
+                    <img src="${item.logo}" alt="${item.name}">
+                </div>
+                <div class="partner-card-details">
+                    <h4 class="partner-name">${item.name}</h4>
+                    <div class="partner-badges">
+                        <span class="partner-badge">
+                            <i class="fa-solid fa-house-medical"></i>
+                            Home Collection
+                        </span>
+                        <span class="partner-badge">
+                            <i class="fa-solid fa-circle-check"></i>
+                            Reports Online
+                        </span>
+                    </div>
+                </div>
             </div>
-
-            <h4>${item.name}</h4>
-
-            <div class="partner-info">
-
-                <span>
-                    <i class="fa-solid fa-house-medical"></i>
-                    Home Collection
-                </span>
-
-                <span>
-                    <i class="fa-solid fa-circle-check"></i>
-                    Reports Online
-                </span>
-
+            <div class="partner-card-action">
+                <div class="action-btn">
+                    View Tests
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
             </div>
-
-            <button class="partner-btn">
-
-                View Tests
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </button>
-
         </a>
-
         `;
-
     });
-
 }
 
+renderPartners("labs", labs);
+renderPartners("radiology", radiology);
 
-renderPartners("labs",labs);
-renderPartners("radiology",radiology);
-
-
-
-document.querySelectorAll(".partner-tab").forEach(tab=>{
-
-    tab.addEventListener("click",function(){
-
-        document.querySelectorAll(".partner-tab")
-            .forEach(btn=>btn.classList.remove("active"));
-
+document.querySelectorAll(".partner-tab").forEach(tab => {
+    tab.addEventListener("click", function () {
+        document.querySelectorAll(".partner-tab").forEach(btn => btn.classList.remove("active"));
         this.classList.add("active");
+
+        const toggleContainer = document.querySelector(".partner-toggle-container");
+        if (toggleContainer) {
+            if (this.dataset.target === "radiology") {
+                toggleContainer.classList.add("radiology-active");
+            } else {
+                toggleContainer.classList.remove("radiology-active");
+            }
+        }
 
         document.querySelectorAll(".partner-grid").forEach(grid => {
             grid.classList.remove("active-grid");
@@ -147,10 +137,9 @@ document.querySelectorAll(".partner-tab").forEach(tab=>{
         });
 
         const target = document.getElementById(this.dataset.target);
-
-        target.classList.add("active-grid");
-        target.style.display = "grid";
-
+        if (target) {
+            target.classList.add("active-grid");
+            target.style.display = "grid";
+        }
     });
-
 });

@@ -885,42 +885,104 @@ section {
     width: 30px;
     border-radius: 20px;
 }
-
 /* =====================================================
    10. JOURNEY
 ===================================================== */
 
 .journey {
-    padding: 100px 0;
+    padding: 80px 0;
     background: #f8fbff;
+    overflow: hidden;
+}
+
+.journey-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.journey-heading h2 {
+    font-size: 38px;
+    font-weight: 800;
+    color: #0d47a1;
+    margin-bottom: 10px;
+}
+
+.journey-heading p {
+    font-size: 16px;
+    color: #64748b;
+    margin: 0;
+}
+
+.journeySwiper {
+    padding: 10px 5px 55px;
+    overflow: visible;
+}
+
+.journeySwiper .swiper-slide {
+    height: auto;
 }
 
 .journey-card {
-    background: #fff;
-    border-radius: 25px;
-    padding: 25px;
-    text-align: center;
-    box-shadow: 0 15px 40px rgba(0,0,0,.08);
     height: 100%;
-    transition: .35s;
-    overflow: hidden;
-    position: relative;
+    background: #fff;
+    padding: 18px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #e8eef7;
+    box-shadow: 0 10px 30px rgba(0,0,0,.06);
+    transition: transform .35s ease, box-shadow .35s ease;
 }
 
 .journey-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(13,110,253,.12);
+}
+
+.journey-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    margin-bottom: 16px;
+}
+
+.journey-image img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+
+.journey-card:hover .journey-image img {
+    transform: scale(1.08);
+}
+
+.step-number {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: #0d6efd;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 800;
+    z-index: 2;
 }
 
 .step-tag {
     display: inline-block;
-    padding: 10px 22px;
-    border-radius: 50px;
+    padding: 6px 14px;
+    margin-bottom: 12px;
+    border-radius: 30px;
+    font-size: 10px;
     font-weight: 700;
-    font-size: 14px;
-    margin-bottom: 20px;
+    letter-spacing: .5px;
 }
 
-/* Scoped color helpers to journey tags */
 .step-tag.blue {
     background: #eaf4ff;
     color: #0d6efd;
@@ -941,52 +1003,25 @@ section {
     color: #d63384;
 }
 
-.journey-image {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    margin-bottom: 25px;
-}
-
-.journey-image img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    transition: .5s;
-}
-
-.journey-card:hover img {
-    transform: scale(1.08);
-}
-
-.step-number {
-    position: absolute;
-    left: 15px;
-    top: 15px;
-    width: 60px;
-    height: 60px;
-    border-radius: 15px;
-    background: rgba(13,110,253,.9);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 34px;
-    font-weight: 700;
-    z-index: 10;
-}
-
 .journey-card h4 {
+    font-size: 17px;
     font-weight: 700;
     color: #0d47a1;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 }
 
 .journey-card p {
-    color: #666;
-    line-height: 30px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #64748b;
+    margin: 0;
 }
 
+.journey-pagination .swiper-pagination-bullet-active {
+    width: 24px;
+    border-radius: 20px;
+    background: #0d6efd;
+}
 /* =====================================================
    TABLET ONLY / TABLET + MOBILE
    Applies at 991px and below
@@ -1325,43 +1360,60 @@ section {
         margin: 0;
     }
 
-    /* ---------- Services ---------- */
+    /* ---------- Services: Mobile ---------- */
+
+    .services {
+        padding: 24px 0 !important;
+    }
 
     .services h2 {
-        font-size: 21px;
-        margin-bottom: 10px;
+        font-size: 17px !important;
+        line-height: 1.2;
+        margin-bottom: 5px !important;
     }
 
-    .section-subtitle {
-        font-size: 12px;
-        margin: 0 0 25px;
-    }
-
-    .service-grid {
-        grid-template-columns: repeat(2,1fr);
-        gap: 10px;
-    }
-
-    .service-grid .card {
-        padding: 18px 8px;
-        border-radius: 12px;
-    }
-
-    .service-icon {
-        width: 42px;
-        height: 42px;
-        font-size: 17px;
-        margin-bottom: 8px;
-    }
-
-    .service-grid .card h3 {
-        font-size: 13px;
-        margin: 8px 0 5px;
-    }
-
-    .service-grid .card p {
-        font-size: 10px;
+    .services .section-subtitle {
+        max-width: 250px;
+        margin: 0 auto 18px !important;
+        font-size: 9px !important;
         line-height: 1.4;
+    }
+
+    .services .service-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .services .service-grid .card {
+        min-width: 0;
+        min-height: 130px;
+        padding: 13px 7px;
+        border-radius: 11px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .services .service-icon {
+        width: 34px;
+        height: 34px;
+        margin: 0 auto 7px;
+        font-size: 14px;
+    }
+
+    .services .service-grid .card h3 {
+        font-size: 11px;
+        line-height: 1.25;
+        margin: 4px 0 5px;
+    }
+
+    .services .service-grid .card p {
+        font-size: 8px;
+        line-height: 1.45;
+        margin: 0;
+        color: var(--text-muted);
     }
 
     /* ---------- CTA ---------- */

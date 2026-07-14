@@ -207,3 +207,43 @@ if (document.readyState === "loading") {
 } else {
     initCounters();
 }
+
+
+const journeySwiper = new Swiper(".journeySwiper", {
+    loop: true,
+    speed: 700,
+    spaceBetween: 20,
+
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+    },
+
+    pagination: {
+        el: ".journey-pagination",
+        clickable: true
+    },
+
+    breakpoints: {
+        0: {
+            slidesPerView: 1.2,
+            spaceBetween: 12
+        },
+
+        577: {
+            slidesPerView: 2,
+            spaceBetween: 18
+        },
+
+        992: {
+            slidesPerView: 3,
+            spaceBetween: 22
+        },
+
+        1200: {
+            slidesPerView: 4,
+            spaceBetween: 24
+        }
+    }
+});

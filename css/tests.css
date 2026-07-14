@@ -184,54 +184,55 @@ transform:translateY(-3px);
 
 /* ================= CATEGORY ================= */
 
-.test-categories{
-padding:20px 0 60px;
+.test-categories {
+    padding: 20px 0 60px;
 }
 
-.category-grid{
-display:grid;
-grid-template-columns:repeat(6,1fr);
-gap:20px;
+/* Default (Desktop) */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
 }
 
-.category-card{
-background:#fff;
-border-radius:20px;
-padding:25px;
-text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0,.06);
-transition:.3s;
-cursor:pointer;
+/* Card Style Upgrade */
+.category-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,.06);
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.category-card:hover{
-transform:translateY(-8px);
-box-shadow:0 15px 35px rgba(13,110,253,.12);
-background:#0d6efd;
-color:#fff;
+/* Icon */
+.category-card i {
+    font-size: 30px;
+    color: #0d6efd;
+    margin-bottom: 10px;
+    transition: 0.3s;
 }
 
-.category-card:hover i{
-transform:scale(1.15);
-color:#fff;
+/* Text */
+.category-card span {
+    display: block;
+    font-weight: 600;
+    font-size: 15px;
 }
 
-.category-card:hover span{
-color:#fff;
+/* Hover effect */
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(13,110,253,.15);
+    background: #0d6efd;
+    color: #fff;
 }
 
-.category-card i{
-font-size:32px;
-color:#0d6efd;
-margin-bottom:12px;
-transition:.3s;
+.category-card:hover i,
+.category-card:hover span {
+    color: #fff;
 }
-
-.category-card span{
-display:block;
-font-weight:600;
-}
-
 
 /* ================= SECTION ================= */
 
@@ -358,6 +359,24 @@ font-size:36px;
     font-size:12px;
     line-height:1.4;
 }
+.category-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        gap: 12px;
+    }
+
+    .category-card {
+        padding: 18px 10px;
+        border-radius: 14px;
+    }
+
+    .category-card i {
+        font-size: 22px;
+        margin-bottom: 6px;
+    }
+
+    .category-card span {
+        font-size: 13px;
+    }
 
 }
 

@@ -1,4 +1,4 @@
-console.log("NIROG Diagnostics Website Loaded");
+// console.log("NIROG Diagnostics Website Loaded");
 window.addEventListener('scroll', function () {
     const header = document.querySelector('.header');
     if (window.scrollY > 40) {
@@ -161,7 +161,7 @@ function initNavbar() {
         }, 100);
     });
 
-    console.log("Navbar initialized ✅");
+    // console.log("Navbar initialized ✅");
     return true;
 }
 

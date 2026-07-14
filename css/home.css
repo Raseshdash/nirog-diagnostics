@@ -1094,6 +1094,35 @@ section {
     .section-title p {
         font-size: 16px;
     }
+    /* ---------- Stats: 4 items in one row ---------- */
+
+    .stats {
+        padding: 20px 0 !important;
+    }
+
+    .stats .stat-grid {
+        display: grid !important;
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 5px !important;
+    }
+
+    .stats .stat-grid > div {
+        min-width: 0 !important;
+        padding: 12px 2px !important;
+        border-radius: 8px;
+    }
+
+    .stats .stat-grid h2 {
+        font-size: 15px !important;
+        white-space: nowrap;
+        margin-bottom: 3px;
+    }
+
+    .stats .stat-grid p {
+        font-size: 7px !important;
+        line-height: 1.2;
+        margin: 0;
+    }
 }
 
 /* =====================================================
@@ -1484,5 +1513,34 @@ section {
     .accordion-body {
         font-size: 11px;
         padding: 14px;
+    }
+    /* ---------- Stats: 4 items in one row ---------- */
+
+    .stats {
+        padding: 20px 0 !important;
+    }
+
+    .stats .stat-grid {
+        display: grid !important;
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 5px !important;
+    }
+
+    .stats .stat-grid > div {
+        min-width: 0 !important;
+        padding: 12px 2px !important;
+        border-radius: 8px;
+    }
+
+    .stats .stat-grid h2 {
+        font-size: 15px !important;
+        white-space: nowrap;
+        margin-bottom: 3px;
+    }
+
+    .stats .stat-grid p {
+        font-size: 7px !important;
+        line-height: 1.2;
+        margin: 0;
     }
 }

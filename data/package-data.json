@@ -1,0 +1,318 @@
+[
+  {
+    "id": 1,
+    "name": "GD Women Basic",
+    "category": "Women",
+    "price": 999,
+    "oldPrice": 1499,
+    "badge": "Best Seller",
+    "description": "Women's Preventive Health Checkup",
+    "sampleType": [
+      "2 ml Serum",
+      "EDTA Whole Blood"
+    ],
+    "tests": [
+      "Estradiol",
+      "CBC-Complete Hemogram Test (28)",
+      "Iron Studies",
+      "LFT",
+      "Kidney Profile",
+      "Lipid Profile",
+      "Vitamin Profile",
+      "HbA1c",
+      "Thyroid Profile",
+      "FSH, LH & Prolactin"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "GD Good Life Health Package Basic",
+    "category": "Full Body",
+    "price": 1499,
+    "oldPrice": 2199,
+    "badge": "Popular",
+    "description": "Complete Body Checkup",
+    "sampleType": [
+      "Fluoride Plasma",
+      "Urine Sample",
+      "2 ml Serum",
+      "EDTA Whole Blood"
+    ],
+    "tests": [
+      "Electrolyte Profile",
+      "Thyroid Profile",
+      "Urine Complete",
+      "CBC",
+      "Glucose Fasting",
+      "HbA1c",
+      "Kidney Profile",
+      "Lipid Profile",
+      "LFT"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "GD Life A1",
+    "category": "Men",
+    "price": 899,
+    "oldPrice": 1299,
+    "badge": "Hot",
+    "description": "Basic Health Checkup for Men",
+    "sampleType": [
+      "Serum",
+      "EDTA Blood"
+    ],
+    "tests": [
+      "CBC",
+      "Kidney Profile",
+      "Thyroid Profile",
+      "HbA1c",
+      "Lipid Profile",
+      "LFT",
+      "Vitamin D",
+      "Vitamin B12"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "GD Heart Care",
+    "category": "Heart Care",
+    "price": 1799,
+    "oldPrice": 2499,
+    "badge": "Recommended",
+    "description": "Comprehensive Cardiac Health Package",
+    "sampleType": [
+      "Serum",
+      "EDTA Blood"
+    ],
+    "tests": [
+      "Lipid Profile",
+      "ECG",
+      "Troponin-I",
+      "CK-MB",
+      "CRP",
+      "HbA1c",
+      "CBC",
+      "LFT",
+      "Kidney Profile",
+      "Electrolytes"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "GD Diabetes Care",
+    "category": "Diabetes",
+    "price": 799,
+    "oldPrice": 1199,
+    "badge": "Popular",
+    "description": "Diabetes Monitoring Package",
+    "sampleType": [
+      "Serum",
+      "EDTA Blood",
+      "Urine"
+    ],
+    "tests": [
+      "HbA1c",
+      "Fasting Blood Sugar",
+      "PP Blood Sugar",
+      "Urine Sugar",
+      "Microalbumin",
+      "Creatinine",
+      "Kidney Profile"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "GD Senior Wellness",
+    "category": "Senior Citizen",
+    "price": 2499,
+    "oldPrice": 3499,
+    "badge": "Top Pick",
+    "description": "Complete Senior Citizen Health Package",
+    "sampleType": [
+      "Serum",
+      "EDTA Blood",
+      "Urine"
+    ],
+    "tests": [
+      "CBC",
+      "LFT",
+      "Kidney Profile",
+      "Lipid Profile",
+      "Vitamin D",
+      "Vitamin B12",
+      "Calcium",
+      "PSA",
+      "HbA1c",
+      "Urine Routine",
+      "Thyroid Profile",
+      "Electrolytes"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "GD Full Body Advance",
+    "category": "Full Body",
+    "price": 2999,
+    "oldPrice": 3999,
+    "badge": "Premium",
+    "description": "Advanced Whole Body Screening",
+    "sampleType": [
+      "Serum",
+      "EDTA Blood",
+      "Urine"
+    ],
+    "tests": [
+      "CBC",
+      "LFT",
+      "Kidney Profile",
+      "Thyroid",
+      "Vitamin D",
+      "Vitamin B12",
+      "Iron Studies",
+      "HbA1c",
+      "Urine Routine",
+      "Lipid Profile",
+      "Calcium",
+      "Electrolytes",
+      "ESR",
+      "CRP"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "GD Women Advanced",
+    "category": "Women",
+    "price": 2299,
+    "oldPrice": 3199,
+    "badge": "Premium",
+    "description": "Advanced Women's Wellness Package",
+    "sampleType": [
+      "Serum",
+      "EDTA Blood"
+    ],
+    "tests": [
+      "CBC",
+      "Estradiol",
+      "Progesterone",
+      "FSH",
+      "LH",
+      "Prolactin",
+      "Vitamin D",
+      "Vitamin B12",
+      "HbA1c",
+      "LFT",
+      "Kidney Profile",
+      "Lipid Profile"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "GD Men's Executive",
+    "category": "Men",
+    "price": 2499,
+    "oldPrice": 3499,
+    "badge": "Executive",
+    "description": "Executive Health Package for Men",
+    "sampleType": [
+      "Serum",
+      "EDTA Blood",
+      "Urine"
+    ],
+    "tests": [
+      "CBC",
+      "PSA",
+      "Testosterone",
+      "Vitamin D",
+      "Vitamin B12",
+      "LFT",
+      "Kidney Profile",
+      "Lipid Profile",
+      "HbA1c",
+      "Urine Routine",
+      "Electrolytes"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "GD Cardiac Advance",
+    "category": "Heart Care",
+    "price": 3299,
+    "oldPrice": 4499,
+    "badge": "Premium",
+    "description": "Advanced Cardiac Risk Assessment",
+    "sampleType": [
+      "Serum",
+      "EDTA Blood"
+    ],
+    "tests": [
+      "ECG",
+      "2D Echo",
+      "Troponin-I",
+      "CK-MB",
+      "Lipid Profile",
+      "HbA1c",
+      "CRP",
+      "Homocysteine",
+      "Electrolytes",
+      "CBC"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "GD Diabetes Plus",
+    "category": "Diabetes",
+    "price": 1599,
+    "oldPrice": 2299,
+    "badge": "Recommended",
+    "description": "Advanced Diabetes Care Package",
+    "sampleType": [
+      "Serum",
+      "Urine",
+      "EDTA Blood"
+    ],
+    "tests": [
+      "HbA1c",
+      "Fasting Sugar",
+      "PP Sugar",
+      "Insulin",
+      "Microalbumin",
+      "Kidney Profile",
+      "Lipid Profile",
+      "LFT",
+      "Vitamin D",
+      "CBC"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "GD Senior Premium",
+    "category": "Senior Citizen",
+    "price": 3999,
+    "oldPrice": 5499,
+    "badge": "Premium",
+    "description": "Premium Senior Citizen Checkup",
+    "sampleType": [
+      "Serum",
+      "EDTA Blood",
+      "Urine"
+    ],
+    "tests": [
+      "CBC",
+      "Kidney Profile",
+      "LFT",
+      "Thyroid",
+      "Vitamin D",
+      "Vitamin B12",
+      "Calcium",
+      "PSA",
+      "HbA1c",
+      "Urine Routine",
+      "Iron Studies",
+      "Lipid Profile",
+      "Electrolytes",
+      "CRP",
+      "ESR"
+    ]
+  }
+]

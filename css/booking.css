@@ -8,13 +8,27 @@ padding:90px 0;
 background:#f8fbff;
 }
 .booking-card{
-background:#fff;
-padding:45px;
-border-radius:25px;
-border:1px solid #edf2ff;
-box-shadow:0 15px 40px rgba(0,0,0,.08);
+     background:#fff;
+     padding:45px;
+     border-radius:28px;
+     border:1px solid #eaf2ff;
+     box-shadow:0 20px 50px rgba(13,110,253,.08);
+     transition:.35s;
+     position:relative;
+     overflow:hidden;
+ }
+.booking-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background:linear-gradient(90deg,#0d6efd,#39b6ff);
 }
-
+.booking-card:hover{
+    transform:translateY(-5px);
+}
 .booking-card h2{
 font-size:34px;
 font-weight:700;
@@ -23,7 +37,21 @@ margin-bottom:30px;
 }
 
 .booking-image{
-animation:float 3s ease-in-out infinite;
+    max-width:100%;
+    filter:drop-shadow(0 18px 35px rgba(13,110,253,.15));
+    animation:floatingDoctor 5s ease-in-out infinite;
+}
+
+@keyframes floatingDoctor{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
 }
 
 .booking-features{
@@ -33,16 +61,64 @@ gap:20px;
 }
 
 .feature-item{
-display:flex;
-align-items:center;
-gap:20px;
-padding:22px;
-background:#fff;
-border-radius:18px;
-border:1px solid #edf2ff;
-box-shadow:0 10px 30px rgba(0,0,0,.06);
-transition:.35s;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:22px;
+
+    border-radius:20px;
+
+    background:#fff;
+
+    border:1px solid #edf3ff;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
 }
+.feature-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:4px;
+
+    height:100%;
+
+    background:#0d6efd;
+
+    transform:scaleY(0);
+
+    transition:.35s;
+}
+
+.feature-item:hover::before{
+
+    transform:scaleY(1);
+
+}
+
+.feature-item:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 20px 40px rgba(13,110,253,.15);
+
+}
+
 
 .feature-item:hover{
 transform:translateY(-6px);
@@ -50,25 +126,59 @@ border-color:#0d6efd;
 }
 
 .feature-item i{
-width:60px;
-height:60px;
-border-radius:50%;
-background:#eef5ff;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:24px;
-color:#0d6efd;
+
+    width:62px;
+
+    height:62px;
+
+    background:#eef6ff;
+
+    color:#0d6efd;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:24px;
+
+    transition:.35s;
 }
 
+.feature-item:hover i{
+
+    background:#0d6efd;
+
+    color:#fff;
+
+    transform:rotate(10deg) scale(1.08);
+
+}
 .booking-card input,
 .booking-card textarea,
 .booking-card select{
-padding:15px 18px;
-border-radius:12px;
-border:2px solid #eef3ff;
-font-size:16px;
-transition:.3s;
+
+    padding:14px 18px;
+
+    border-radius:14px;
+
+    border:2px solid #edf2ff;
+
+    transition:.3s;
+
+    font-size:15px;
+
+}
+
+.booking-card input:hover,
+.booking-card textarea:hover,
+.booking-card select:hover{
+
+    border-color:#bfd9ff;
+
 }
 
 .booking-card input:focus,
@@ -77,22 +187,52 @@ transition:.3s;
 border-color:#0d6efd;
 box-shadow:0 0 0 .2rem rgba(13,110,253,.15);
 }
+.booking-card .primary-btn{
 
+    padding:16px;
+
+    font-size:18px;
+
+    border-radius:14px;
+
+    transition:.35s;
+}
+
+.booking-card .primary-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 30px rgba(13,110,253,.3);
+
+}
 .booking-benefits{
 padding:90px 0;
 }
-
 .benefit-card{
-background:#fff;
-padding:35px;
-text-align:center;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-transition:.35s;
+
+    background:#fff;
+
+    padding:35px 25px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    border:1px solid #edf2ff;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+
+    transition:.35s;
+
+    height:100%;
 }
 
 .benefit-card:hover{
-transform:translateY(-8px);
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 40px rgba(13,110,253,.15);
+
 }
 
 .benefit-card i{
@@ -102,10 +242,56 @@ margin-bottom:15px;
 }
 
 .help-section{
-padding:90px 0;
-background:linear-gradient(135deg,#0d6efd,#0047b3);
-color:#fff;
-margin-top:40px;
+
+    padding:100px 0;
+
+    background:linear-gradient(135deg,#0d6efd,#0047b3);
+
+    color:#fff;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.help-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+
+    height:320px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.06);
+
+    left:-120px;
+
+    top:-120px;
+
+}
+
+.help-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:240px;
+
+    height:240px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.06);
+
+    right:-80px;
+
+    bottom:-80px;
+
 }
 
 .help-box{
@@ -150,28 +336,341 @@ margin-bottom:15px;
 
 }
 .process-card{
-background:#fff;
-padding:40px 30px;
-border-radius:20px;
-border:1px solid #edf2ff;
-box-shadow:0 12px 30px rgba(0,0,0,.08);
-transition:.35s;
+
+    background:#fff;
+
+    padding:40px 25px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    border:1px solid #edf2ff;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    height:100%;
+
+    position:relative;
+
 }
 
 .process-card:hover{
-transform:translateY(-8px);
-border-color:#0d6efd;
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 45px rgba(13,110,253,.15);
+
 }
 .process-icon{
-width:85px;
-height:85px;
-margin:0 auto 20px;
-background:linear-gradient(135deg,#0d6efd,#2d8cff);
-color:#fff;
-font-size:34px;
-font-weight:700;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
+
+    width:82px;
+
+    height:82px;
+
+    margin:0 auto 20px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#0d6efd,#42a5ff);
+
+    color:#fff;
+
+    font-size:32px;
+
+    font-weight:700;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:.35s;
+}
+
+.process-card:hover .process-icon{
+
+    transform:rotate(10deg) scale(1.08);
+
+}
+
+
+@media(max-width:991px){
+
+.booking-section,
+.booking-benefits,
+.process,
+.help-section{
+
+    padding:70px 0;
+
+}
+
+.booking-card{
+
+    margin-top:30px;
+
+    padding:35px;
+
+}
+
+.booking-image{
+
+    max-width:360px;
+
+    display:block;
+
+    margin:auto;
+
+}
+
+.feature-item{
+
+    padding:18px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.booking-section,
+.booking-benefits,
+.process,
+.help-section{
+
+    padding:45px 0;
+
+}
+.booking-benefits .row{
+
+    --bs-gutter-x:8px;
+    --bs-gutter-y:0;
+
+}
+
+.booking-benefits .col-lg-3{
+
+    width:25%;
+
+}
+.booking-card{
+
+    padding:22px;
+
+    border-radius:18px;
+
+}
+
+.booking-card h2{
+
+    font-size:24px;
+
+    margin-bottom:20px;
+
+}
+
+.booking-image{
+
+    max-width:240px;
+
+    display:block;
+
+    margin:auto;
+
+}
+
+.booking-features{
+
+    gap:12px;
+
+    margin-top:25px !important;
+
+}
+
+.feature-item{
+
+    padding:14px;
+
+    gap:12px;
+
+    border-radius:14px;
+
+}
+
+.feature-item i{
+
+    width:45px;
+
+    height:45px;
+
+    font-size:18px;
+
+}
+
+.feature-item h5{
+
+    font-size:14px;
+
+    margin-bottom:3px;
+
+}
+
+.feature-item p{
+
+    font-size:11px;
+
+    line-height:1.5;
+
+    margin:0;
+
+}
+
+.booking-card input,
+.booking-card textarea,
+.booking-card select{
+
+    padding:11px 14px;
+
+    font-size:13px;
+
+}
+
+.booking-card textarea{
+
+    min-height:110px;
+
+}
+
+.booking-card .primary-btn{
+
+    padding:13px;
+
+    font-size:15px;
+
+}
+
+.benefit-card{
+
+    padding:14px 8px;
+
+    border-radius:12px;
+
+}
+
+.benefit-card i{
+
+    font-size:20px;
+
+    margin-bottom:8px;
+
+}
+
+.benefit-card h5{
+
+    font-size:10px;
+
+    line-height:1.3;
+
+    margin:0;
+
+}
+
+.process .row{
+
+    --bs-gutter-x:8px;
+    --bs-gutter-y:0;
+
+}
+.process .col-lg-3{
+
+    width:25%;
+
+}
+.process-card{
+
+    padding:14px 6px;
+
+    border-radius:12px;
+
+}
+
+.process-icon{
+
+    width:42px;
+
+    height:42px;
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+.process-card h4{
+
+    font-size:10px;
+
+    line-height:1.3;
+
+    margin:0;
+
+}
+
+.help-box h2{
+
+    font-size:24px;
+
+}
+
+.help-box p{
+
+    font-size:13px;
+
+}
+
+.help-box .d-flex{
+
+    flex-direction:column;
+
+}
+
+.help-box .btn{
+
+    width:100%;
+
+}
+.booking-benefits{
+
+    padding:40px 0;
+
+}
+.process{
+
+    padding:40px 0;
+
+}
+.booking-benefits .section-title,
+.process .section-title{
+
+    font-size:22px;
+
+    margin-bottom:18px;
+
+}
+
+.booking-benefits .mt-4{
+
+    margin-top:18px !important;
+
+}
+
+.process .mt-5{
+
+    margin-top:18px !important;
+
+}
 }

@@ -197,34 +197,241 @@ color:#0d6efd;
 background:#eef5ff;
 }
 
-/* ===========================
-RESPONSIVE
-=========================== */
 
-@media(max-width:768px){
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width:991px){
+
+    .page-banner{
+        padding:70px 0;
+    }
+
+    .page-banner h1{
+        font-size:42px;
+    }
+
+    .contact-section,
+    .map-section,
+    .faq-section,
+    .cta{
+        padding:70px 0;
+    }
+
+    .contact-form{
+        padding:35px;
+    }
+
+    .map-box iframe{
+        height:360px;
+    }
+
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width:576px){
+
+/* ---------------- Banner ---------------- */
+
+.page-banner{
+    padding:45px 15px;
+}
 
 .page-banner h1{
-font-size:38px;
+    font-size:28px;
+    margin-bottom:8px;
 }
 
-.contact-section,
-.map-section,
-.faq-section{
-padding:70px 0;
+.page-banner p{
+    font-size:13px;
+    margin-top:0;
 }
 
-.contact-form{
-padding:30px;
+/* ---------------- Contact Section ---------------- */
+
+.contact-section{
+    padding:45px 0;
 }
+
+.section-tag{
+    font-size:11px;
+    padding:6px 14px;
+    margin-bottom:12px;
+}
+
+.contact-section h2{
+    font-size:24px;
+    margin-bottom:12px;
+}
+
+.contact-section p{
+    font-size:13px;
+    line-height:1.7;
+}
+
+/* ---------------- Contact Cards ---------------- */
 
 .contact-card{
-flex-direction:column;
-text-align:center;
-align-items:center;
+
+    padding:15px;
+    gap:12px;
+    margin-top:12px;
+
+    border-radius:14px;
+
+    align-items:flex-start;
+}
+
+.contact-card i{
+
+    width:45px;
+    height:45px;
+
+    font-size:18px;
+
+    flex-shrink:0;
+}
+
+.contact-card h5{
+
+    font-size:15px;
+    margin-bottom:4px;
+}
+
+.contact-card p{
+
+    font-size:12px;
+    line-height:1.5;
+    margin:0;
+}
+
+/* ---------------- Contact Form ---------------- */
+
+.contact-form{
+
+    margin-top:25px;
+
+    padding:20px;
+
+    border-radius:18px;
+}
+
+.contact-form h3{
+
+    font-size:22px;
+    margin-bottom:18px;
+}
+
+.contact-form .form-control{
+
+    font-size:13px;
+
+    padding:12px 14px;
+
+    border-radius:10px;
+}
+
+.contact-form textarea{
+
+    min-height:120px;
+}
+
+.contact-form .primary-btn{
+
+    width:100%;
+
+    padding:13px;
+
+    font-size:15px;
+}
+
+/* ---------------- Map ---------------- */
+
+.map-section{
+
+    padding:45px 0;
+}
+
+.map-section .section-title{
+
+    font-size:24px;
+
+    margin-bottom:18px;
+}
+
+.map-box{
+
+    border-radius:16px;
 }
 
 .map-box iframe{
-height:300px;
+
+    height:240px;
+}
+
+/* ---------------- FAQ ---------------- */
+
+.faq-section{
+
+    padding:45px 0;
+}
+
+.faq-section .section-title{
+
+    font-size:24px;
+}
+
+.accordion-item{
+
+    border-radius:12px;
+
+    margin-bottom:12px;
+}
+
+.accordion-button{
+
+    font-size:14px;
+
+    padding:14px 16px;
+}
+
+.accordion-body{
+
+    font-size:13px;
+
+    line-height:1.6;
+}
+
+/* ---------------- CTA ---------------- */
+
+.cta{
+
+    padding:45px 15px;
+}
+
+.cta h2{
+
+    font-size:24px;
+}
+
+.cta p{
+
+    font-size:13px;
+
+    margin:12px 0 22px;
+}
+
+.cta .primary-btn{
+
+    width:100%;
+
+    max-width:260px;
+
+    margin:auto;
 }
 
 }

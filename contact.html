@@ -92,8 +92,11 @@
 
                             <h5>Phone</h5>
 
-                            <p>+91 89080 79448</p>
-
+                            <p>
+                                <a href="tel:+918908079448">
+                                    +91 89080 79448
+                                </a>
+                            </p>
                         </div>
 
                     </div>
@@ -106,7 +109,11 @@
 
                             <h5>Email</h5>
 
-                            <p>info@nirogdiagnostics.com</p>
+                            <p>
+                                <a href="mailto:info@nirogdiagnostics.com">
+                                    info@nirogdiagnostics.com
+                                </a>
+                            </p>
 
                         </div>
 
@@ -136,26 +143,25 @@
 
                         <h3>Send Us a Message</h3>
 
-                        <form>
+                        <form id="contactForm">
 
                             <div class="row">
 
                                 <div class="col-md-6 mb-3">
-
                                     <input
                                             type="text"
+                                            id="name"
                                             class="form-control"
-                                            placeholder="Full Name">
-
+                                            placeholder="Full Name"
+                                            required>
                                 </div>
 
                                 <div class="col-md-6 mb-3">
-
                                     <input
                                             type="email"
+                                            id="email"
                                             class="form-control"
                                             placeholder="Email Address">
-
                                 </div>
 
                             </div>
@@ -163,36 +169,33 @@
                             <div class="row">
 
                                 <div class="col-md-6 mb-3">
-
                                     <input
                                             type="tel"
+                                            id="mobile"
                                             class="form-control"
-                                            placeholder="Mobile Number">
-
+                                            placeholder="Mobile Number"
+                                            required>
                                 </div>
 
                                 <div class="col-md-6 mb-3">
-
                                     <input
                                             type="text"
+                                            id="subject"
                                             class="form-control"
                                             placeholder="Subject">
-
                                 </div>
 
                             </div>
 
                             <textarea
+                                    id="message"
                                     class="form-control mb-4"
                                     rows="5"
                                     placeholder="Write Your Message"></textarea>
 
-                            <button class="primary-btn">
-
+                            <button type="submit" class="primary-btn">
                                 <i class="fa-solid fa-paper-plane"></i>
-
                                 Send Message
-
                             </button>
 
                         </form>
@@ -360,6 +363,7 @@
 
 <script src="js/include.js"></script>
 <script src="js/app.js"></script>
+<script src="js/contact.js"></script>
 
 </body>
 

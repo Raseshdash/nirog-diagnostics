@@ -1,3 +1,4 @@
+/*booking.js*/
 document.getElementById("bookBtn").addEventListener("click", function () {
 
     const name = document.getElementById("fullName").value.trim();
